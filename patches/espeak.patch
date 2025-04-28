@@ -1,0 +1,29 @@
+--- espeak-ng/src/libespeak-ng/synth_mbrola.c	2025-03-23 18:44:08.337384592 +0100
++++ espeak-ng/src/libespeak-ng/synth_mbrola_mod.c	2025-03-23 22:07:16.563480130 +0100
+@@ -90,20 +90,20 @@
+ 	// if not found, then also look in
+ 	//   usr/share/mbrola/xx, /usr/share/mbrola/xx/xx, /usr/share/mbrola/voices/xx
+ 	if (GetFileLength(path) <= 0) {
+-		sprintf(path, "/usr/share/mbrola/%s", mbrola_voice);
++		sprintf(path, "/app/share/mbrola/%s", mbrola_voice);
+
+ 		if (GetFileLength(path) <= 0) {
+-			sprintf(path, "/usr/share/mbrola/%s/%s", mbrola_voice, mbrola_voice);
++			sprintf(path, "/app/share/mbrola/%s/%s", mbrola_voice, mbrola_voice);
+
+ 			if (GetFileLength(path) <= 0)
+-				sprintf(path, "/usr/share/mbrola/voices/%s", mbrola_voice);
++				sprintf(path, "/app/share/mbrola/voices/%s/%s", mbrola_voice);
+
+ 			// Show error message
+ 			if (GetFileLength(path) <= 0) {
+ 				fprintf(stderr, "Cannot find MBROLA voice file '%s' in neither of paths:\n"
+-						" - /usr/share/mbrola/%s\n"
+-						" - /usr/share/mbrola/%s/%s\n"
+-						" - /usr/share/mbrola/voices/%s\n"
++						" - /app/share/mbrola/%s\n"
++						" - /app/share/mbrola/%s/%s\n"
++						" - /app/share/mbrola/voices/%s/%s\n"
+ 						"Please install necessary MBROLA voice!\n",
+ 						mbrola_voice, mbrola_voice, mbrola_voice, mbrola_voice, mbrola_voice);
+ 				// Set path back to simple name, otherwise it shows misleading error only for

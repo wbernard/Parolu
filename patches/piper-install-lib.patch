@@ -1,0 +1,17 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3ccfd87..4f40c8a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -26,6 +26,12 @@ add_library(piper SHARED
+     src/cpp/piper.cpp
+     src/cpp/main.cpp
+ )
++
++install(TARGETS piper
++        LIBRARY DESTINATION lib
++        ARCHIVE DESTINATION lib)
++
++install(FILES src/cpp/piper.hpp DESTINATION include)
+
+ target_include_directories(piper PUBLIC
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src/cpp>

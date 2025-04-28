@@ -1,0 +1,6 @@
+{
+    "name": "python-deps",
+    "buildsystem": "simple",
+    "build-commands": [],
+    "modules": []
+}

@@ -1,0 +1,6 @@
+data/im.bernard.Parolu.desktop.in
+data/im.bernard.Parolu.metainfo.xml.in
+data/im.bernard.Parolu.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

@@ -87,7 +87,7 @@ class ParoluWindow(Adw.ApplicationWindow):
             "Esperanto": "eo",
             "English": "en",
         }
-        self.voice_mgr = VoiceManager(self)
+        self.voicemanager = VoiceManager(self)
 
         # Initiale UI-Aktualisierung
         #self._update_voice_chooser()
@@ -97,7 +97,7 @@ class ParoluWindow(Adw.ApplicationWindow):
         lang_name = self.lang_chooser.get_selected_item().get_string()
         self.lang_code = self.lang_map.get(lang_name, "en")
         print ('Sprachkodex am Beginn  ', self.lang_code)
-        voices = self.voice_mgr.get_installed_voices(self.lang_code)
+        voices = self.voicemanager.get_installed_voices(self.lang_code)
         print ('Stimmen aus pipervoice  ', voices)
 
     def _connect_signals(self):
@@ -143,30 +143,30 @@ class ParoluWindow(Adw.ApplicationWindow):
         # self.lang_chooser.disconnect_by_func(self._on_lang_changed)
 
         # Aktuelle Sprache auswählen
-        current_lang = self.lang_chooser.get_selected()
-        self._update_voice_chooser(current_lang)
-        print ('current_lang   ', current_lang)
+        lang_name = self.lang_chooser.get_selected_item().get_string()
+        self.lang_code = self.lang_map.get(lang_name, "en")
+        self._update_voice_chooser(self.lang_code)
+        print ('gewählte Sprache   ', lang_name)
         # Signal wieder verbinden
         self.lang_chooser.connect("notify::selected", self._on_lang_changed)
 
     def _on_lang_changed(self, dropdown, _):
-        lang_index = dropdown.get_selected()
-        print ('neue Sprache angeklickt', lang_index)
-        self._update_voice_chooser(lang_index)
+        lang_name = self.lang_chooser.get_selected_item().get_string()
+        print ('neue Sprache angeklickt', lang_name)
+        self.lang_code = self.lang_map.get(lang_name, "en")
+        self._update_voice_chooser(self.lang_code)
 
     def _on_voice_changed(self, dropdown, _):
         selected = dropdown.get_selected()
         model = dropdown.get_model()
 
-        if selected == model.get_n_items() - 1:  # "Andere Stimme..." ausgewählt
-            self._show_voice_download_dialog()
+        # if selected == model.get_n_items() - 1:  # "Andere Stimme..." ausgewählt
+        #     self._show_voice_download_dialog()
 
-    def _update_voice_chooser(self, lang_index):
+    def _update_voice_chooser(self, lang_code):
         """Aktualisiert die Dropdown-Auswahl"""
-        lang_name = self.lang_chooser.get_selected_item().get_string()
-        lang_code = self.lang_map.get(lang_name, "en")
-        voices = self.voice_mgr.get_installed_voices(lang_code)
-        print ('lang_name lang_code ', lang_name, lang_code)
+        voices = self.voicemanager.get_installed_voices(lang_code)
+        print ('lang_code in voice_chooser  ', lang_code)
         print ('verfügbare voices  ', voices)
 
         model = Gtk.StringList.new()
@@ -175,15 +175,15 @@ class ParoluWindow(Adw.ApplicationWindow):
         model.append("Andere Stimme herunterladen...")
 
         self.voice_chooser.set_model(model)
-        self.voice_chooser.set_selected(0)
+        self.voice_chooser.set_selected(0)   # stellt Auswahlfenster auf die erste Zeile
 
     # @Gtk.Template.Callback()
-    def on_voice_chooser_changed(self, dropdown):
-        selected = dropdown.get_selected()
-        model = dropdown.get_model()
+    # def on_voice_chooser_changed(self, dropdown):   # bei Änderung in voice_chooser
+    #     selected = dropdown.get_selected()          # wird voic_download_
+    #     model = dropdown.get_model()
 
-        if selected == model.get_n_items() - 1:  # Letzter Eintrag ("Andere Stimme...")
-            self._show_voice_download_dialog()
+    #     if selected == model.get_n_items() - 1:  # Letzter Eintrag ("Andere Stimme...")
+    #         self._show_voice_download_dialog()
 
     # @Gtk.Template.Callback()
     def on_voice_download_selected(self, *args):
@@ -260,7 +260,7 @@ class ParoluWindow(Adw.ApplicationWindow):
             dialog.destroy()
             self._update_voice_chooser()
 
-        self.voice_mgr.download_voice(
+        self.voicemanager.download_voice(
             voice_id,
             progress_callback=on_progress
         )

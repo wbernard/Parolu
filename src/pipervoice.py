@@ -8,7 +8,7 @@ class VoiceManager:
         self.voices_dir = os.path.join(
             GLib.get_user_data_dir(),
             "parolu",
-            "voices"
+            "models"
         )
         os.makedirs(self.voices_dir, exist_ok=True)
         print ('voices dir   ', self.voices_dir)
@@ -17,7 +17,7 @@ class VoiceManager:
         """Gibt installierte Stimmen für eine Sprache zurück"""
         lang_dir = os.path.join(self.voices_dir, lang_code)
         voices = []
-
+        print ('Stimmenordner der Sprache  ', lang_dir)
         if os.path.exists(lang_dir):
             for voice_id in os.listdir(lang_dir):
                 voice_path = os.path.join(lang_dir, voice_id)
@@ -42,8 +42,9 @@ class VoiceManager:
         """Extrahiert lesbaren Namen aus Voice-ID"""
         # Beispiel: "de_DE-kerstin-low" → "Kerstin (low)"
         parts = voice_id.split('-')
+        print ('Teile der Stimme  ', len(parts), parts)
         if len(parts) > 1:
-            return f"{parts[1].capitalize()} ({parts[2]})"
+            return f"{parts[1].capitalize()}"
         return voice_id
 
     def download_voice(self, voice_id, progress_callback=None):

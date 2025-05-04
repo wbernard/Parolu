@@ -82,12 +82,10 @@ class ParoluApplication(Adw.Application):
 
 def main(version):
     """The application's entry point."""
-    print("=== Application starting ===")  # Debug output
     app = ParoluApplication()
-    print("=== Application running ===")  # Debug output
+    # print("=== Application running ===")  # Debug output
     result = app.run(sys.argv)
     return result
 
 if __name__ == "__main__":
-    print("=== Running as main script ===")  # Debug output
     main("0.1.0")

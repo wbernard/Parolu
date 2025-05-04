@@ -22,37 +22,33 @@ import shutil
 
 class Reader():
       # Konstruktor, initialisiert Eingabewerte
-    def __init__(self, text, engine, lang, pitch, speed):
+    def __init__(self, text, engine, lang_code, pitch, speed):
         self.text = text
         self.engine = engine
-        self.lang = lang
+        self.lang_code = lang_code  # de, it, eo, en
         self.pitch = pitch
         self.speed = speed
         Gst.init(None)
         self._init_gstreamer()
+        print ('in reader erhaltener lang_code  ', self.lang_code)
 
         if self.engine == 'pyttsx4':
-            self.use_pyttsx4(text, lang, pitch, speed)
+            self.use_pyttsx4(text, lang_code, pitch, speed)
 
         elif self.engine == 'piper':
-            self.use_piper(text, lang, pitch, speed)
+            self.use_piper(text, lang_code, pitch, speed)
 
         elif self.engine == 'gTTS':
             # Ausgabe der Audiodatei mit gTTS
-            if lang == "Deutsch":
-                lang = 'de'
-            elif lang == "Italiano":
-                lang = 'it'
-            elif lang == "English":
-                lang = 'en'
+            if lang_code == "de" or "it" or "eo" or "en":
+                self.use_gTTS(text, lang_code)
+
             else:
-                print ('funktioniert noch nicht')
+                print ('andere Sprache funktioniert noch nicht')
                 #return
 
-            self.use_gTTS(text, lang)
-
         else:
-            print ('funktioniert noch nicht')
+            print ('andere engine funktioniert noch nicht')
             #return
 
     def _init_gstreamer(self):
@@ -69,7 +65,7 @@ class Reader():
         convert.link(sink)
 
 
-    def use_piper(self, text, lang, pitch, speed):  # Ausgabe über wav
+    def use_piper(self, text, lang_code, pitch, speed):  # Ausgabe über wav
         print(f"Starte Piper-Synthese für: '{text[:20]}...'")
         try:
             # Modellpfade
@@ -104,18 +100,18 @@ class Reader():
             print(f"Piper Fehler (Typ: {type(e)}): {e}")
             self._play_test_tone()
 
-    def use_pyttsx4(self,text, lang, pitch, speed):
+    def use_pyttsx4(self,text, lang_code, pitch, speed):
 
-        if lang == "Deutsch":
+        if lang_code == "de":
             lang = 'German'
-        elif lang == "Italiano":
+        elif lang_code == "it":
             lang = 'Italian'
-        elif lang == "English":
+        elif lang_code == "en":
             lang = 'English (Great Britain)'
-        elif lang == "Esperanto":
+        elif lang_code == "eo":
             lang = 'Esperanto'
         else:
-            print ('funktioniert noch nicht')
+            print ('andere Sprache funktioniert noch nicht')
             return
 
         engine = pyttsx4.init()
@@ -133,14 +129,14 @@ class Reader():
 
         self._play_audio_file(self.temp_path)
 
-    def use_gTTS(self, text, lang):
+    def use_gTTS(self, text, lang_code):
+        print ('lang in gTTS ', lang_code)
         try:
-            from gtts import gTTS
-            import tempfile
+            #from gtts import gTTS, lang
 
             # Temporäre Datei erstellen
             with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as fp:
-                tts = gTTS(text=text, lang=lang)
+                tts = gTTS(text=text, lang=lang_code)
                 tts.save(fp.name)
                 self.temp_path = fp.name  # Pfad zur temporären Datei merken
                 print ('Pfad zur temporären Datei  ', self.temp_path)

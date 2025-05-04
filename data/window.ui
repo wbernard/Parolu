@@ -3,7 +3,7 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
   <template class="ParoluWindow" parent="AdwApplicationWindow">
-    <property name="default-width">700</property>
+    <property name="default-width">600</property>
     <property name="default-height">300</property>
     <property name="title">Parolu</property>
     <style>
@@ -57,7 +57,6 @@
                 <property name="enable-search">true</property>
                 <property name="tooltip-text">Wählen Sie eine Sprache</property>
                 <property name="valign">center</property>
-                <signal name="notify::selected" handler="on_lang_changed"/>
                 <property name="model">
                   <object class="GtkStringList">
                     <items>
@@ -74,13 +73,12 @@
               <object class="GtkDropDown" id="voice_chooser">
                 <property name="enable-search">true</property>
                 <property name="tooltip-text">Wählen Sie eine Stimme</property>
-                <signal name="notify::selected" handler="on_voice_download_selected"/>
+                <signal name="notify::selected" handler="on_voice_changed"/>
               </object>
             </child>
             <child>
               <object class="GtkDropDown" id="pitch_chooser">
                 <property name="enable-search">true</property>
-                <property name="tooltip-text">Wählen Sie eine Stimmlage</property>
                 <property name="model">
                   <object class="GtkStringList">
                     <items>
@@ -101,7 +99,6 @@
             <child>
               <object class="GtkDropDown" id="speed_chooser">
                 <property name="enable-search">true</property>
-                <property name="tooltip-text">Wählen Sie eine Geschwindigkeit</property>
                 <property name="model">
                   <object class="GtkStringList">
                     <items>

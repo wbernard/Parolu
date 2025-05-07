@@ -1,6 +1,7 @@
 import os
 import json
 from gi.repository import Gtk, Adw, GLib
+import requests
 
 class VoiceManager:
     def __init__(self, app_window):
@@ -20,6 +21,7 @@ class VoiceManager:
         print ('Stimmenordner der Sprache  ', lang_dir)
         if os.path.exists(lang_dir):
             for voice_id in os.listdir(lang_dir):
+                print ('voice_id = ', voice_id)
                 voice_path = os.path.join(lang_dir, voice_id)
                 if os.path.isdir(voice_path):
                     if self._is_valid_voice(voice_path, voice_id):
@@ -44,28 +46,36 @@ class VoiceManager:
         parts = voice_id.split('-')
         print ('Teile der Stimme  ', len(parts), parts)
         if len(parts) > 1:
-            return f"{parts[1].capitalize()}"
+            return f"{parts[1].capitalize()} ({parts[2]})"
         return voice_id
 
-    def download_voice(self, voice_id, progress_callback=None):
+    def download_voice(self, voice_id, model_url, config_url, progress_callback=None):
         """Lädt eine Stimme herunter und speichert sie lokal"""
+
         lang_code = voice_id.split('_')[0]
         voice_dir = os.path.join(self.voices_dir, lang_code, voice_id)
         os.makedirs(voice_dir, exist_ok=True)
 
-        # Download ONNX-Modell
-        onnx_url = f"https://github.com/rhasspy/piper/releases/download/v0.0.2/{voice_id}.onnx"
-        onnx_path = os.path.join(voice_dir, f"{voice_id}.onnx")
-        self._download_file(onnx_url, onnx_path, progress_callback)
 
+        # Download ONNX-Modell
+        #onnx_url = f"https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/{lang_code}/{voice_id}.onnx"
+        model_path = os.path.join(voice_dir, f"{voice_id}.onnx")
+        self._download_file(model_url, model_path, progress_callback)
         # Download Konfiguration
-        json_url = f"{onnx_url}.json"
-        json_path = os.path.join(voice_dir, f"{voice_id}.onnx.json")
-        self._download_file(json_url, json_path, progress_callback)
+        #json_url = f"{onnx_url}.json"
+        config_path = os.path.join(voice_dir, f"{voice_id}.onnx.json")
+        self._download_file(config_url, config_path, progress_callback)
+
+        # https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/de/de_DE/eva_k/x_low/de_DE-eva_k-x_low.onnx?download=true
+        # https://huggingface.co/rhasspy/piper-voices/resolve/v1.0.0/de/de_DE/karlsson/low/de_DE-karlsson-low.onnx?download=true
 
         return voice_dir
 
     def _download_file(self, url, dest_path, progress_callback=None):
         """Lädt eine Datei herunter mit Fortschrittsanzeige"""
-        # Implementierung mit requests oder libsoup
-        pass
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+
+        with open(dest_path, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)

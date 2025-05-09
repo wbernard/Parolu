@@ -1,0 +1,11 @@
+prefix=/app
+exec_prefix=/app
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: eSpeak NG
+Description: eSpeak NG is a multi-lingual software speech synthesizer
+Version: 1.52-dev
+Requires:
+Libs: -L${libdir} -lespeak-ng
+Cflags: -I${includedir}

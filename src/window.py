@@ -78,8 +78,8 @@ class ParoluWindow(Adw.ApplicationWindow):
         self.save_button.connect('clicked', self.save_audio_dialog)
 
         ## Operationen zum Auswählen bzw Laden einer Stimme ##
-
-        # Stimmen-API-URL
+        # ======================================================================
+        # Stimmen-API-URL hier können die piper-Stimmen heruntergeladen werden
         self.voices_api = "https://raw.githubusercontent.com/rhasspy/piper/master/VOICES.md"
 
          # Sprachzuordnung
@@ -92,19 +92,119 @@ class ParoluWindow(Adw.ApplicationWindow):
         self.voicemanager = VoiceManager(self)
 
         # Initiale UI-Aktualisierung
-        #self._update_voice_chooser()
-        self._setup_lang_chooser()
         self._connect_signals()
+        self._setup_lang_chooser()
 
         lang_name = self.lang_chooser.get_selected_item().get_string()
         self.lang_code = self.lang_map.get(lang_name, "en")
         print ('Sprachkodex am Beginn  ', self.lang_code)
-        voices = self.voicemanager.get_installed_voices(self.lang_code)
-        print ('Stimmen aus pipervoice  ', voices)
+        # voices = self.voicemanager.get_installed_voices(self.lang_code)
+        # print ('Stimmen aus pipervoice  ', voices)
 
     def _connect_signals(self):
         self.lang_chooser.connect("notify::selected", self._on_lang_changed)
         self.voice_chooser.connect("notify::selected", self._on_voice_changed)
+        #self.voice_chooser.connect("notify::selected", self._show_voice_download_dialog)
+
+    def _setup_lang_chooser(self):
+        # Signal vorübergehend deaktivieren
+        self.lang_chooser.disconnect_by_func(self._on_lang_changed)
+
+        # Aktuelle Sprache auswählen
+        lang_name = self.lang_chooser.get_selected_item().get_string()
+        self.lang_code = self.lang_map.get(lang_name, "en")
+        self._update_voice_chooser(self.lang_code)
+        print ('gewählte Sprache   ', lang_name)
+        # Signal wieder verbinden
+        self.lang_chooser.connect("notify::selected", self._on_lang_changed)
+
+    def _on_lang_changed(self, dropdown, _):
+        lang_name = self.lang_chooser.get_selected_item().get_string()
+        print ('neue Sprache angeklickt', lang_name)
+        self.lang_code = self.lang_map.get(lang_name, "en")
+        self._update_voice_chooser(self.lang_code)
+
+    def _on_voice_changed(self, dropdown, _):
+        selected = dropdown.get_selected()
+        model = dropdown.get_model()
+        print ('$$$$$$$$$$$$$ in on voice changed  ', model)
+        if selected == model.get_n_items() - 1:  # "Andere Stimme..." ausgewählt
+            self._show_voice_download_dialog()
+
+    def _update_voice_chooser(self, lang_code):
+        """Aktualisiert die Dropdown-Auswahl"""
+        voices = self.voicemanager.get_installed_voices(lang_code)
+        # print ('lang_code in voice_chooser  ', lang_code)
+        # print ('verfügbare voices  ', voices)
+
+        model = Gtk.StringList.new()
+        for voice in voices:
+            model.append(voice['name'])
+        model.append("Andere Stimme herunterladen...")
+
+        self.voice_chooser.set_model(model)
+        self.voice_chooser.set_selected(0)   # stellt Auswahlfenster auf die erste Zeile
+
+
+    # @Gtk.Template.Callback()
+    # def on_voice_download_selected(self, *args):
+    #     """Handhabt die Auswahl von 'Andere Stimme'"""
+    #     self._show_voice_download_dialog()
+
+    def _show_voice_download_dialog(self):
+        """Zeigt Download-Dialog an"""
+        dialog = Adw.MessageDialog(
+            transient_for=self,
+            heading="Neue Stimme herunterladen"
+        )
+
+        # Lade verfügbare Stimmen vom Server
+        available_voices = self._fetch_available_voices()
+        print ('======= Verfügbare Stimmen  ', available_voices)
+        # Erstelle Auswahl-Liste
+        listbox = Gtk.ListBox()
+        for voice in available_voices:
+            row = Adw.ActionRow(title=voice['name'])
+            # print ('in show voice_download_dialog model_url', model_url)
+            print ('$$$####$$$$ in show voice_download_dialog voice', voice)
+            btn = Gtk.Button(label="Installieren")
+            btn.connect('clicked', self._on_voice_selected, voice['id'], voice['model_url'], voice['config_url'], dialog)
+            row.add_suffix(btn)
+            listbox.append(row)
+        dialog.set_extra_child(listbox)
+        dialog.present()
+
+    def _fetch_available_voices(self):
+        """Lädt verfügbare Stimmen von der Piper GitHub-Seite oder lokal zwischengespeichert"""
+        try:
+            # 1. Versuche, von GitHub zu laden
+            response = requests.get(
+                self.voices_api,
+                timeout=20  # Timeout nach 10 Sekunden
+            )
+            response.raise_for_status()  # Wirft Exception bei HTTP-Fehlern
+
+            # 2. Parse die Markdown-Antwort
+            print ('### jetzt rufe ich aus fetch_available parse_voices auf für  ', self.lang_code)
+            voices = self._parse_voices_md(response.text, self.lang_code)
+
+            # 3. Cache die Stimmen lokal
+            cache_dir = os.path.join(GLib.get_user_cache_dir(), "parolu")
+            os.makedirs(cache_dir, exist_ok=True)
+
+            cache_file = os.path.join(cache_dir, "voices_cache.json")
+            with open(cache_file, 'w') as f:
+                json.dump({
+                    'timestamp': time.time(),
+                    'voices': voices,
+                    'lang': self.lang_code
+                }, f)
+
+            return voices
+
+        except (requests.RequestException, json.JSONDecodeError) as e:
+            print(f"Netzwerkfehler: {e}. Versuche Cache...")
+            return self._load_cached_voices(lang_code)
 
     def _parse_voices_md(self, md_text, lang_code):
         """Parst das aktuelle Piper-Voices Markdown-Format"""
@@ -136,161 +236,18 @@ class ParoluWindow(Adw.ApplicationWindow):
             if current_voice and line.startswith('* ') and 'http' in line:
                 quality = line.split('*')[1].split('-')[0].strip()
                 urls = [u.split('(')[1].split(')')[0] for u in line.split('[') if 'http' in u]
-                print ('urls der Stimme', urls)
+                print ('---------- urls der Stimme in parse', urls)
                 if urls and len(urls) >= 2:
                     voices.append({
-                        'id': f"{lang_code}_{current_voice}_{quality}",
+                        'id': f"{lang_code}-{current_voice}-{quality}",
                         'name': f"{current_voice} ({quality})",
                         'model_url': urls[0],  # Erste URL ist das Modell
                         'config_url': urls[1],  # Zweite URL ist die Konfig
                         'quality': quality
                     })
+        print ('##### voices aus parse', voices)
 
         return voices or [{'id': f"{lang_code}_default", 'name': "Standard-Stimme"}]
-
-    def _setup_lang_chooser(self):
-        # Signal vorübergehend deaktivieren
-        # self.lang_chooser.disconnect_by_func(self._on_lang_changed)
-
-        # Aktuelle Sprache auswählen
-        lang_name = self.lang_chooser.get_selected_item().get_string()
-        self.lang_code = self.lang_map.get(lang_name, "en")
-        self._update_voice_chooser(self.lang_code)
-        print ('gewählte Sprache   ', lang_name)
-        # Signal wieder verbinden
-        self.lang_chooser.connect("notify::selected", self._on_lang_changed)
-
-    def _on_lang_changed(self, dropdown, _):
-        lang_name = self.lang_chooser.get_selected_item().get_string()
-        print ('neue Sprache angeklickt', lang_name)
-        self.lang_code = self.lang_map.get(lang_name, "en")
-        self._update_voice_chooser(self.lang_code)
-
-    def _on_voice_changed(self, dropdown, _):
-        selected = dropdown.get_selected()
-        model = dropdown.get_model()
-
-        if selected == model.get_n_items() - 1:  # "Andere Stimme..." ausgewählt
-            self._show_voice_download_dialog()
-
-    def _update_voice_chooser(self, lang_code):
-        """Aktualisiert die Dropdown-Auswahl"""
-        voices = self.voicemanager.get_installed_voices(lang_code)
-        print ('lang_code in voice_chooser  ', lang_code)
-        print ('verfügbare voices  ', voices)
-
-        model = Gtk.StringList.new()
-        for voice in voices:
-            model.append(voice['name'])
-        model.append("Andere Stimme herunterladen...")
-
-        self.voice_chooser.set_model(model)
-        self.voice_chooser.set_selected(0)   # stellt Auswahlfenster auf die erste Zeile
-
-    # @Gtk.Template.Callback()
-    # def on_voice_chooser_changed(self, dropdown):   # bei Änderung in voice_chooser
-    #     selected = dropdown.get_selected()          # wird voic_download_
-    #     model = dropdown.get_model()
-
-    #     if selected == model.get_n_items() - 1:  # Letzter Eintrag ("Andere Stimme...")
-    #         self._show_voice_download_dialog()
-
-    # @Gtk.Template.Callback()
-    def on_voice_download_selected(self, *args):
-        """Handhabt die Auswahl von 'Andere Stimme'"""
-        self._show_voice_download_dialog()
-
-    # def _show_voice_download_dialog(self):
-    #     """Zeigt Dialog mit Stimmenauswahl"""
-    #     dialog = Adw.MessageDialog(
-    #         transient_for=self,
-    #         heading="Stimmen herunterladen",
-    #         body="Bitte warten..."
-    #     )
-
-        # Erstelle ListBox für Stimmen
-    #     self.voice_list = Gtk.ListBox()
-    #     scrolled = Gtk.ScrolledWindow()
-    #     scrolled.set_child(self.voice_list)
-    #     dialog.set_extra_child(scrolled)
-
-        # Lade Stimmen im Hintergrund
-    #     GLib.idle_add(self._populate_voice_list, dialog)
-    #     dialog.present()
-
-    # def _populate_voice_list(self, dialog):
-    #     try:
-    #         lang_index = self.lang_chooser.get_selected()
-    #         lang_code = self.lang_map.get(self.lang_chooser.get_model().get_item(lang_index).get_string(), "en")
-
-    #         response = requests.get(self.voices_api)
-    #         print ('## jetzt rufe ich parce_voices mit lang_index und lang_code ',lang_index, lang_code)
-    #         voices = self._parse_voices_md(response.text, lang_code)
-    #         print ('Verfügbare Stimmen in populate Voices', voices)
-    #         for voice in voices:
-    #             row = Adw.ActionRow(title=voice['name'])
-    #             btn = Gtk.Button(label="Installieren")
-    #             btn.connect('clicked', lambda *_, v=voice: self._install_voice(v['id']))
-    #             row.add_suffix(btn)
-    #             self.voice_list.append(row)
-
-    #         dialog.set_body(f"{len(voices)} Stimmen verfügbar")
-    #     except Exception as e:
-    #         dialog.set_body(f"Fehler: {str(e)}")
-
-    def _show_voice_download_dialog(self):
-        """Zeigt Download-Dialog an"""
-        dialog = Adw.MessageDialog(
-            transient_for=self,
-            heading="Neue Stimme herunterladen"
-        )
-
-        # Lade verfügbare Stimmen vom Server
-        available_voices = self._fetch_available_voices()
-        print ('======= Verfügbare Stimmen  ', available_voices)
-        # Erstelle Auswahl-Liste
-        listbox = Gtk.ListBox()
-        for voice in available_voices:
-            row = Adw.ActionRow(title=voice['name'])
-            btn = Gtk.Button(label="Installieren")
-            btn.connect('clicked', self._on_voice_selected, voice['id'], voice['model_url'], voice['config_url'], dialog)
-            row.add_suffix(btn)
-            listbox.append(row)
-
-        dialog.set_extra_child(listbox)
-        dialog.present()
-
-    def _fetch_available_voices(self):
-        """Lädt verfügbare Stimmen von der Piper GitHub-Seite oder lokal zwischengespeichert"""
-        try:
-            # 1. Versuche, von GitHub zu laden
-            response = requests.get(
-                "https://raw.githubusercontent.com/rhasspy/piper/master/VOICES.md",
-                timeout=10  # Timeout nach 10 Sekunden
-            )
-            response.raise_for_status()  # Wirft Exception bei HTTP-Fehlern
-
-            # 2. Parse die Markdown-Antwort
-            print ('### jetzt rufe ich aus fetch_available parse_voices auf', self.lang_code)
-            voices = self._parse_voices_md(response.text, self.lang_code)
-
-            # 3. Cache die Stimmen lokal
-            cache_dir = os.path.join(GLib.get_user_cache_dir(), "parolu")
-            os.makedirs(cache_dir, exist_ok=True)
-
-            cache_file = os.path.join(cache_dir, "voices_cache.json")
-            with open(cache_file, 'w') as f:
-                json.dump({
-                    'timestamp': time.time(),
-                    'voices': voices,
-                    'lang': self.lang_code
-                }, f)
-
-            return voices
-
-        except (requests.RequestException, json.JSONDecodeError) as e:
-            print(f"Netzwerkfehler: {e}. Versuche Cache...")
-            return self._load_cached_voices(lang_code)
 
     def _load_cached_voices(self, lang_code):
         """Lädt zwischengespeicherte Stimmen falls Online-Laden fehlschlägt"""
@@ -327,7 +284,6 @@ class ParoluWindow(Adw.ApplicationWindow):
 
         def on_complete():
             dialog.destroy()
-
             self._update_voice_chooser(lang_code)
 
         self.voicemanager.download_voice(

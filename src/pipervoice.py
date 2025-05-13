@@ -21,7 +21,7 @@ class VoiceManager:
         print ('Stimmenordner der Sprache  ', lang_dir)
         if os.path.exists(lang_dir): # z.B. /home/walter/.var/app/im.bernard.Parolu/data/parolu/models/de
             for voice_id in os.listdir(lang_dir): # die Stimmdateien einer bestimmten Sprache
-                # print ('voice_id = ', voice_id)
+                print ('voice_id = ', voice_id)
                 voice_path = os.path.join(lang_dir, voice_id)
                 if os.path.isdir(voice_path):  # wenn voice_path ein Ordner ist
                     if self._is_valid_voice(voice_path, voice_id):
@@ -46,7 +46,7 @@ class VoiceManager:
         parts = voice_id.split('-')
         print ('Teile der Stimme  ', len(parts), parts)
         if len(parts) > 1:
-            return f"{parts[1].capitalize()} ({parts[2]})"
+            return f"{parts[1].capitalize()} ({parts[2]})" # hier wird Kerstin (low) zurückgegeben
         return voice_id
 
     def download_voice(self, voice_id, model_url, config_url, progress_callback=None):

@@ -140,6 +140,7 @@ class ParoluWindow(Adw.ApplicationWindow):
         model = Gtk.StringList.new()
         for voice in voices:
             model.append(voice['name'])
+            print ('Namen der Stimme voice[name]  = ', voice['name'])
         model.append("Andere Stimme herunterladen...")
 
         self.voice_chooser.set_model(model)
@@ -408,15 +409,15 @@ class ParoluWindow(Adw.ApplicationWindow):
         engine = self.tts_chooser.get_selected_item().get_string()
         print(engine)
 
-        lang_name = self.lang_chooser.get_selected_item().get_string()
-        print(lang_name)
-
         pitch = self.pitch_chooser.get_selected_item().get_string()
         print(pitch)
 
         speed = self.speed_chooser.get_selected_item().get_string()
         print(speed)
 
-        self.read = Reader(text, engine, self.lang_code, pitch, speed)
+        selected_voice = self.voice_chooser.get_selected_item().get_string()
+        print(selected_voice)
+
+        self.read = Reader(text, engine, self.lang_code, selected_voice, pitch, speed)
 
 

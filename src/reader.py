@@ -45,7 +45,7 @@ class Reader():
 
         elif self.engine == 'gTTS':
             # Ausgabe der Audiodatei mit gTTS
-            if lang_code == "de" or "it" or "eo" or "en":
+            if lang_code == "de" or "it" or "es" or "fr":
                 self.use_gTTS(text, lang_code)
 
             else:
@@ -138,10 +138,12 @@ class Reader():
             lang = 'German'
         elif lang_code == "it":
             lang = 'Italian'
-        elif lang_code == "en":
-            lang = 'English (Great Britain)'
+        elif lang_code == "es":
+            lang = 'Spanish'
         elif lang_code == "eo":
             lang = 'Esperanto'
+        elif lang_code == "fr":
+            lang = 'French'
         else:
             print ('andere Sprache funktioniert noch nicht')
             return

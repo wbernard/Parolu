@@ -19,18 +19,10 @@
                 <property name="action-name">win.open</property>
               </object>
             </child>
-            <child>
-              <object class="GtkDropDown" id="tts_chooser">
-                <property name="enable-search">false</property>
-                <property name="model">
-                  <object class="GtkStringList">
-                    <items>
-                      <item>pyttsx4</item>
-                      <item>piper</item>
-                      <item>gTTS</item>
-                    </items>
-                  </object>
-                </property>
+            <child >
+              <object class="GtkButton" id="save_text_button">
+                <property name="label">Save-text</property>
+                <property name="action-name">win.save-as</property>
               </object>
             </child>
             <child type="end">
@@ -63,8 +55,9 @@
                     <items>
                       <item>Deutsch</item>
                       <item>Italiano</item>
+                      <item>Español</item>
                       <item>Esperanto</item>
-                      <item>English</item>
+                      <item>Francais</item>
                     </items>
                   </object>
                 </property>

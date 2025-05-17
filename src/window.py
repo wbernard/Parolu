@@ -42,7 +42,7 @@ class ParoluWindow(Adw.ApplicationWindow):
 
     main_text_view = Gtk.Template.Child()  # Feld für Texteingabe
     open_button = Gtk.Template.Child()     # öffnet eine Datei
-    tts_chooser = Gtk.Template.Child()     # lädt tts-engine
+    save_text_button = Gtk.Template.Child()     # speichert den Text
     read_button = Gtk.Template.Child()     # spielt Audio-Datei ab
     save_button = Gtk.Template.Child()     # speichert Audio-Datei
     lang_chooser= Gtk.Template.Child()     # lädt Sprache
@@ -59,17 +59,17 @@ class ParoluWindow(Adw.ApplicationWindow):
         self.add_action(open_action)
 
         # die Aktion zum Speichern des Texts wird hinzugefügt
-        save_text_action = Gio.SimpleAction(name="save-text-as")
-        save_text_action.connect("activate", self.save_text_dialog)
-        self.add_action(save_text_action)
+        save_action = Gio.SimpleAction(name="save-as")
+        save_action.connect("activate", self.save_text_dialog)
+        self.add_action(save_action)
 
         # die Aktion zum Speichern des Audio-files wird hinzugefügt
         save_audio_action = Gio.SimpleAction(name="save-audio-as")
         save_audio_action.connect("activate", self.save_audio_dialog)
         self.add_action(save_audio_action)
 
-        #die Aktion zum Laden der tts-engine wird hinzugefügt
-        #self.tts_chooser.connect("notify::selected-item", on_selected_engine)
+        #die Aktion zum Laden Speichern des Texts wird hinzugefügt
+        self.save_text_button.connect('clicked', self.save_text_dialog)
 
         #die Aktion zum Hören des Texts wird hinzugefügt
         self.read_button.connect('clicked', self.read_text)
@@ -86,8 +86,9 @@ class ParoluWindow(Adw.ApplicationWindow):
         self.lang_map = {
             "Deutsch": "de",
             "Italiano": "it",
+            "Español": "es",
             "Esperanto": "eo",
-            "English": "en",
+            "Francais": "fr",
         }
         self.voicemanager = VoiceManager(self)
 
@@ -328,7 +329,6 @@ class ParoluWindow(Adw.ApplicationWindow):
     def on_save_audio_response(self, dialog, result):
         file = dialog.save_finish(result)
         if file is not None:
-            #self.read.safe_audio_file()
             self.read.save_audio_file(file)
 
     # Inhalt der Textdatei wird asynchron geöffnet um die Anwendung nicht zu blockieren
@@ -406,7 +406,7 @@ class ParoluWindow(Adw.ApplicationWindow):
         # Retrieve all the visible text between the two bounds
         text = buffer.get_text(start, end, False)
 
-        engine = self.tts_chooser.get_selected_item().get_string()
+        engine = 'piper'
         print(engine)
 
         pitch = self.pitch_chooser.get_selected_item().get_string()

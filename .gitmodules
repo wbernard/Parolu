@@ -1,0 +1,3 @@
+[submodule "subprojects/piper-src"]
+	path = subprojects/piper-src
+	url = https://github.com/rhasspy/piper/archive/e268564deb779af984ac8f632c98727447632124.zip

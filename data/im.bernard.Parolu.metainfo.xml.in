@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>im.bernard.Parolu.desktop</id>
+  <name>Parolu</name>
+  <summary>Sprachsynthese mir verschiedenen Synthesizern</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <developer_name>Bernard</developer_name>
+
+  <description>
+    <p>
+      Parolu ist ein benutzerfreundliches Frontend für die Sprachsynthese mit Piper.
+      Es bietet natürlich klingende Sprachausgabe für viele Sprachen – komplett offline und datenschutzfreundlich.
+    </p>
+    <p>
+      Ideal für Screenreader, Sprachassistenten, Barrierefreiheit oder experimentelle Anwendungen.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">im.bernard.Parolu.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://example.com/screenshots/parolu1.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://walter.bernard.im/</url>
+  <url type="bugtracker">https://walter.bernard.im/</url>
+
+  <releases>
+    <release version="0.1.0" date="2025-04-09">
+      <description>
+        <p>Erste veröffentlichte Version.</p>
+      </description>
+    </release>
+  </releases>
+</component>
+

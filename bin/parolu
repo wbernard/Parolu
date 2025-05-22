@@ -1,0 +1,3 @@
+#!/bin/sh
+export PYTHONPATH=/app/lib/python3.12/site-packages
+exec python3 -m parolu.main "$@"

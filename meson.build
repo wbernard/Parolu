@@ -14,7 +14,8 @@ install_data('bin/parolu', install_dir: '/app/bin')
 
 # Installiere alle Python-Quelldateien aus src/
 python.install_sources(
-  ['src/main.py', 'src/window.py', 'src/__init__.py', 'src/reader.py', 'src/pipervoice.py', 'src/window.ui'],
+  ['src/main.py', 'src/window.py', 'src/__init__.py', 'src/reader.py', 'src/pipervoice.py', 'src/window.ui', 'src/vocx.py'
+  ],
   subdir: 'parolu'
 )
 

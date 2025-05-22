@@ -32,6 +32,7 @@ parolu_sources = [
   'window.py',
   'reader.py',
   'pipervoice.py',
+  "vocx.py",
 ]
 dependencies = [
   piper_dep

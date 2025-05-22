@@ -21,6 +21,7 @@ import numpy as np
 import shutil
 from pathlib import Path
 from .pipervoice import VoiceManager
+from .vocx import convert_text
 
 class Reader():
       # Konstruktor, initialisiert Eingabewerte
@@ -36,6 +37,10 @@ class Reader():
         print ('in reader erhaltener lang_code  ', self.lang_code)
 
         self.voicemanager = VoiceManager(self)
+
+        if self.lang_code == 'eo':
+            text = convert_text(text)
+            print(text)  # Ausgabe konveertiert
 
         if self.engine == 'pyttsx4':
             self.use_pyttsx4(text, lang_code, pitch, speed)
@@ -121,7 +126,7 @@ class Reader():
             wav_data = self._samples_to_wav(samples, target_rate)
             #self._play_wav(wav_data)
 
-            with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as fp:
+            with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as fp:
                 self.temp_path = fp.name  # Pfad zur temporären Datei merken
                 print ('Pfad zur temporären Datei  ', self.temp_path)
                 with open(self.temp_path, "wb") as f:
@@ -155,7 +160,7 @@ class Reader():
         rate = int(speed)
         engine.setProperty('rate', rate)
 
-        with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as fp:
+        with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as fp:
             engine.save_to_file(text, fp.name)
             engine.runAndWait()
             self.temp_path = fp.name

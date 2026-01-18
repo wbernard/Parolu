@@ -111,8 +111,7 @@ class ParoluWindow(Adw.ApplicationWindow):
         self._setup_lang_chooser()
 
         lang_name = self.lang_chooser.get_selected_item().get_string()
-        self.lang_code = self.lang_map.get(lang_name, "en")
-        # print ('Sprachkodex am Beginn  ', self.lang_code)
+        self.lang_code = self.lang_map.get(lang_name)
 
         # HACK: This should be in the UI file, but for some reason style classes are not applied
         GLib.idle_add(self.get_style_context().add_class, "view")
@@ -172,7 +171,7 @@ class ParoluWindow(Adw.ApplicationWindow):
 
         # Aktuelle Sprache auswählen
         lang_name = self.lang_chooser.get_selected_item().get_string()
-        self.lang_code = self.lang_map.get(lang_name, "en")
+        self.lang_code = self.lang_map.get(lang_name)
         self._update_voice_chooser(self.lang_code)
         # print ('gewählte Sprache   ', lang_name)
         # Signal wieder verbinden
@@ -180,20 +179,15 @@ class ParoluWindow(Adw.ApplicationWindow):
 
     def _on_lang_changed(self, dropdown, _):
         lang_name = self.lang_chooser.get_selected_item().get_string()
-        # print ('neue Sprache angeklickt', lang_name)
-        self.lang_code = self.lang_map.get(lang_name, "en")
+        self.lang_code = self.lang_map.get(lang_name)
         self._update_voice_chooser(self.lang_code)
 
     def _on_voice_changed(self, dropdown, _):
         selected = dropdown.get_selected()
-        model = dropdown.get_model()
-        # print ('$$$$$$$$$$$$$ in on voice changed  ', model)
-        if selected == model.get_n_items() - 2:  # vorletzte Zeile ausgewählt
+        n_items = dropdown.get_model().get_n_items()
+        if selected == n_items - 1:  # letzte Zeile ausgewählt
             if self.lang_code != "eo":
-                self._show_voice_download_dialog()
-        elif selected == model.get_n_items() - 1:  # letzte Zeile ausgewählt
-            if self.lang_code != "eo":
-                self._show_voice_delete_dialog()
+                self._show_voice_manage_dialog()
 
     def _update_voice_chooser(self, lang_code):
         """Aktualisiert die Dropdown-Auswahl"""
@@ -207,13 +201,12 @@ class ParoluWindow(Adw.ApplicationWindow):
             # print ('Namen der Stimme voice[name]  = ', voice['name'])
 
         if lang_code != "eo":  # für Esperanto gibt es aktuell keine Stimmen
-            model.append(_("Download Voice…"))
-            model.append(_("Delete Voice…"))
+            model.append(_("Manage Voices…"))
 
         self.voice_chooser.set_model(model)
         self.voice_chooser.set_selected(0)   # stellt Auswahlfenster auf die erste Zeile
 
-    def _show_voice_download_dialog(self):
+    def _show_voice_manage_dialog(self):
         dialog = Adw.Window(
             transient_for=self,
             modal=True,
@@ -228,7 +221,7 @@ class ParoluWindow(Adw.ApplicationWindow):
 
         # Custom HeaderBar ohne doppelte Titelleiste
         header_bar = Adw.HeaderBar()
-        title = Adw.WindowTitle(title=_("Download Voices"))
+        title = Adw.WindowTitle(title=_("Manage Voices"))
         header_bar.set_title_widget(title)
         main_box.append(header_bar)
 
@@ -240,16 +233,27 @@ class ParoluWindow(Adw.ApplicationWindow):
         available_voices = self._fetch_available_voices()
         installed_voices = self.voicemanager.get_installed_voices(self.lang_code)
         installed_ids = {v['id'] for v in installed_voices}
-
         # Fortschrittsanzeigen Dictionary
         self.download_progress = {}
 
         for voice in available_voices:
-            if voice['id'] not in installed_ids:
-                row = Adw.ActionRow(title=voice['name'],
+
+            row = Adw.ActionRow(title=voice['name'],
                                   margin_start=12,
                                   margin_end=12)
 
+            if voice['id'] in installed_ids:
+
+                # Get the path
+                path = next(item['path'] for item in installed_voices if item['id'] == voice['id'])
+
+                # Löschen-Button
+                btn = Gtk.Button(label=_("Delete"),
+                               css_classes=["suggested-action"])
+                btn.connect('clicked', self._delete_voice,
+                          voice['id'], path , dialog)
+
+            else:
                 # Fortschrittsbalken
                 progress = Gtk.ProgressBar(
                     show_text=True,
@@ -263,66 +267,9 @@ class ParoluWindow(Adw.ApplicationWindow):
                                css_classes=["suggested-action"])
                 btn.connect('clicked', self._on_voice_selected,
                           voice['id'], voice['model_url'], voice['config_url'], dialog)
-
-                # Layout
                 row.add_suffix(progress)
-                row.add_suffix(btn)
-                listbox.append(row)
-
-        if listbox.get_first_child() is None:
-            row = Adw.ActionRow(_title="All voices are already installed")
-            listbox.append(row)
-
-        scrolled.set_child(listbox)
-        main_box.append(scrolled)
-        dialog.set_content(main_box)
-        dialog.present()
-
-    def _show_voice_delete_dialog(self):
-        dialog = Adw.Window(
-            transient_for=self,
-            modal=True,
-            title="",  # Leerer Titel verhindert doppelte Anzeige
-            default_width=500,
-            default_height=300,
-            deletable=True  # X-Button aktivieren
-        )
-
-        # Hauptcontainer mit HeaderBar
-        main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
-
-        # Custom HeaderBar ohne doppelte Titelleiste
-        header_bar = Adw.HeaderBar()
-        title = Adw.WindowTitle(title=_("Remove Voices"))
-        header_bar.set_title_widget(title)
-        main_box.append(header_bar)
-
-        # Scrollbereich für die Liste
-        scrolled = Gtk.ScrolledWindow(vexpand=True)
-        listbox = Gtk.ListBox(selection_mode=Gtk.SelectionMode.NONE)
-
-        # installierte Stimmen anzeigen
-        installed_voices = self.voicemanager.get_installed_voices(self.lang_code)
-        installed_ids = {v['id'] for v in installed_voices}
-
-        for voice in installed_voices:
-            row = Adw.ActionRow(title=voice['name'],
-                              margin_start=12,
-                              margin_end=12)
-
-            # Löschen-Button
-            btn = Gtk.Button(label=_("Delete"),
-                           css_classes=["suggested-action"])
-            btn.connect('clicked', self._delete_voice,
-                      voice['id'], voice['path'], dialog)
-
-            # Layout
 
             row.add_suffix(btn)
-            listbox.append(row)
-
-        if listbox.get_first_child() is None:
-            row = Adw.ActionRow(title=_("There are no installed voices for this language"))
             listbox.append(row)
 
         scrolled.set_child(listbox)

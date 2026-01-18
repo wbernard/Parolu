@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="adwaita" version="1"/>
+
+  <object class="AdwWindow" id="dialog">
+    <property name="default-width">500</property>
+    <property name="default-height">300</property>
+    <property name="modal">true</property>
+    <property name="deletable">true</property>
+
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+
+        <!-- HeaderBar -->
+        <child>
+          <object class="AdwHeaderBar">
+            <child>
+              <object class="AdwWindowTitle">
+                <property name="title" translatable="yes">Manage Voices</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <!-- Scrolled list -->
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="vexpand">true</property>
+
+            <child>
+              <object class="GtkListBox" id="voice_list">
+                <property name="selection-mode">none</property>
+              </object>
+            </child>
+
+          </object>
+        </child>
+
+      </object>
+    </child>
+  </object>
+</interface>

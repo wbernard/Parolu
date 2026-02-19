@@ -26,7 +26,10 @@
     "build-options" : {
         "env" : {
             "ONNX_ROOT" : "/app/onnx_root"
-        }
+        },
+        "build-args": [
+            "--share=network"
+        ]
     },
     "modules": [
         "pip-dependencies.json",
@@ -34,18 +37,21 @@
             "name": "piper-model-ludoviko",
             "buildsystem": "simple",
             "build-commands": [
-                "mkdir -p /app/share/piper/eo/eo-ludoviko-medium",
-                "cp eo-ludoviko-medium.onnx /app/share/piper/eo/eo-ludoviko-medium/",
-                "cp eo-ludoviko-medium.onnx.json /app/share/piper/eo/eo-ludoviko-medium/"
+            	"mkdir -p /app/share/piper/eo/eo-ludoviko-medium",
+        	"wget -O /app/share/piper/eo/eo-ludoviko-medium/eo-ludoviko-medium.onnx https://raw.githubusercontent.com/wbernard/Parolu/main/models/eo/eo-ludoviko-medium/eo-ludoviko-medium.onnx",
+        	"wget -O /app/share/piper/eo/eo-ludoviko-medium/p eo-ludoviko-medium.onnx.json https://raw.githubusercontent.com/wbernard/Parolu/main/models/eo/eo-ludoviko-medium/eo-ludoviko-medium.onnx.json"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "path": "models/eo/eo-ludoviko-medium/eo-ludoviko-medium.onnx"
+                    "url": "https://raw.githubusercontent.com/wbernard/Parolu/main/models/eo/eo-ludoviko-medium/eo-ludoviko-medium.onnx",
+                    "sha256": "db505438a5364e8e2e0242c4324130a873ed660dfbe8d9689cef428ffb1b645f"
                 },
                 {
                     "type": "file",
-                    "path": "models/eo/eo-ludoviko-medium/eo-ludoviko-medium.onnx.json"
+                    "url": "https://raw.githubusercontent.com/wbernard/Parolu/main/models/eo/eo-ludoviko-medium/eo-ludoviko-medium.onnx.json",
+                    "sha256": "6c70278e89055ebdcb23a83b60626baf31dd13651c1e03dbfda7c4bd152c63e9"
+
                 }
             ]
         },
@@ -54,17 +60,19 @@
             "buildsystem": "simple",
             "build-commands": [
                 "mkdir -p /app/share/piper/eo/eo-gosia-medium",
-                "cp eo-gosia-medium.onnx /app/share/piper/eo/eo-gosia-medium/",
-                "cp eo-gosia-medium.onnx.json /app/share/piper/eo/eo-gosia-medium/"
+        	"wget -O /app/share/piper/eo/eo-gosia-medium/eo-gosia-medium.onnx https://raw.githubusercontent.com/wbernard/Parolu/main/models/eo/eo-gosia-medium/eo-gosia-medium.onnx",
+        	"wget -O /app/share/piper/eo/eo-gosia-medium/p eo-gosia-medium.onnx.json https://raw.githubusercontent.com/wbernard/Parolu/main/models/eo/eo-gosia-medium/eo-gosia-medium.onnx.json"
             ],
             "sources": [
                 {
-                    "type": "file",
-                    "path": "models/eo/eo-gosia-medium/eo-gosia-medium.onnx"
+                    "type": "archive",
+                    "url": "https://raw.githubusercontent.com/wbernard/Parolu/main/models/eo/eo-gosia-medium/eo-gosia-medium.onnx",
+                    "sha256": "38f66464240ed74f186e6b7dc13c6e3b22e023426299f25c2b3cc9dfa9373fbc"
                 },
                 {
-                    "type": "file",
-                    "path": "models/eo/eo-gosia-medium/eo-gosia-medium.onnx.json"
+                    "type": "archive",
+                    "url": "https://raw.githubusercontent.com/wbernard/Parolu/main/models/eo/eo-gosia-medium/eo-gosia-medium.onnx.json",
+                    "sha256": "1aefb31a9d53ffe44a8163ff73ec833acb7a6253848f6bb0403d8a66f9c7510d"
                 }
             ]
         },

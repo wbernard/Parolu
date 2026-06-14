@@ -1,0 +1,163 @@
+# ITALIAN TRALNSLATION.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the parolu package.
+# ALBANO BATTISTELLA <ALBANOBATTISTELLA@GMAIL.COM>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-04-05 10:32+0200\n"
+"Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
+"Language-Team: Italian <LL@li.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Apri file di testo"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Salva testo su file"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Menu"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Scegli lingua"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "Scegli voce"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "Regola tono"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "Regola velocità"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "Salva audio su file"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "Leggi testo"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_Scorciatoie da tastiera"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_Informazioni su Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Leggi il testo ad alta voce"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Parolu ti permette di generare audio da testo utilizzando diverse voci. Questo "
+"avviene esclusivamente offline sul tuo dispositivo, il tuo testo non viene "
+"mai inviato a terze parti."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"È basato sulla libreria di sintesi vocale Piper e supporta voci per "
+"diverse lingue tra cui tedesco, italiano, francese, spagnolo e persino "
+"esperanto!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "Versione iniziale"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "Caricamento"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "Scarica voci…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "Elimina voci…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "Scarica voci"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "Nessuna connessione di rete"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "Impossibile recuperare le voci disponibili"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "Tutte le voci scaricate"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "Nessuna voce aggiuntiva disponibile"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "Rimuovi voci"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "Elimina"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "Nessuna voce installata"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "Non ci sono voci da rimuovere per questa lingua"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "Installazione in corso"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "Installazione completata"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "Installato"

@@ -33,6 +33,8 @@ sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 locale.bindtextdomain('parolu', localedir)
 locale.textdomain('parolu')
+gettext.bindtextdomain('parolu', localedir)
+gettext.textdomain('parolu')
 gettext.install('parolu', localedir)
 
 if __name__ == '__main__':

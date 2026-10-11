@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-09 19:08+0200\n"
+"PO-Revision-Date: 2026-10-09 19:09+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Open Text File"
+msgstr "Tekstbestand openen"
+
+msgid "Save Text to File"
+msgstr "Tekst opslaan in bestand"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Choose Language"
+msgstr "Taal kiezen"
+
+msgid "Choose Voice"
+msgstr "Stem kiezen"
+
+msgid "Adjust Pitch"
+msgstr "Toonhoogte aanpassen"
+
+msgid "Adjust Speed"
+msgstr "Snelheid aanpassen"
+
+msgid "Save Audio to File"
+msgstr "Audio opslaan in bestand"
+
+msgid "Read Text"
+msgstr "Tekst voorlezen"
+
+msgid "_Keyboard Shortcuts"
+msgstr "_Sneltoetsen"
+
+msgid "_About Parolu"
+msgstr "_Over Parolu"
+
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Algemeen"
+
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Sneltoetsen tonen"
+
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Afsluiten"
+
+msgid "Parolu"
+msgstr "Parolu"
+
+msgid "Read text out loud"
+msgstr "Tekst voorlezen"
+
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Met Parolu kun je tekst laten voorlezen met verschillende stemmen. Dit "
+"gebeurt volledig offline op je apparaat. Je tekst wordt nooit naar derden "
+"verstuurd."
+
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"De toepassing is gebaseerd op de spraaksynthesebibliotheek Piper en "
+"ondersteunt stemmen voor verschillende talen, waaronder Duits, Italiaans, "
+"Frans, Spaans en zelfs Esperanto!"
+
+msgid "Minor release with build system fixes"
+msgstr "Kleine uitgave met oplossingen voor het bouwsysteem"
+
+msgid "Minor release with mostly internal improvements to the code"
+msgstr "Kleine uitgave met voornamelijk interne verbeteringen aan de code"
+
+msgid "Initial release"
+msgstr "Eerste uitgave"
+
+msgid "Loading"
+msgstr "Laden"
+
+msgid "Download Voices…"
+msgstr "Stemmen downloaden…"
+
+msgid "Delete Voices…"
+msgstr "Stemmen verwijderen…"
+
+msgid "Download Voices"
+msgstr "Stemmen downloaden"
+
+msgid "No Network Connection"
+msgstr "Geen netwerkverbinding"
+
+msgid "Could not fetch available voices"
+msgstr "De beschikbare stemmen konden niet worden opgehaald"
+
+msgid "Install"
+msgstr "Installeren"
+
+msgid "All Voices Downloaded"
+msgstr "Alle stemmen gedownload"
+
+msgid "No additional voices available"
+msgstr "Geen extra stemmen beschikbaar"
+
+msgid "Remove Voices"
+msgstr "Stemmen verwijderen"
+
+msgid "Delete"
+msgstr "Verwijderen"
+
+msgid "No Installed Voices"
+msgstr "Geen stemmen geïnstalleerd"
+
+msgid "There are no voices to remove for this language"
+msgstr "Er zijn geen stemmen voor deze taal om te verwijderen"
+
+msgid "Default Voice"
+msgstr "Standaardstem"
+
+msgid "Installing"
+msgstr "Installeren"
+
+msgid "Preparing 0%"
+msgstr "Voorbereiden 0%"
+
+msgid "Download: {percent}%"
+msgstr "Downloaden: {percent}%"
+
+msgid "Installation complete"
+msgstr "Installatie voltooid"
+
+msgid "Installed"
+msgstr "Geïnstalleerd"
+
+msgid "Try Again"
+msgstr "Opnieuw proberen"
+
+msgid "Error: {error}"
+msgstr "Fout: {error}"
+
+msgid "Delete Voice?"
+msgstr "Stem verwijderen?"
+
+msgid "Should the voice '{voice_id}' be deleted irreversibly?"
+msgstr "Wil je de stem ‘{voice_id}’ definitief verwijderen?"
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "Deleting…"
+msgstr "Verwijderen…"
+
+msgid "Voice Deleted"
+msgstr "Stem verwijderd"
+
+msgid "The voice '{voice_id}' was deleted successfully"
+msgstr "De stem ‘{voice_id}’ is verwijderd"
+
+msgid "Close"
+msgstr "Sluiten"
+
+msgid "Voice path does not exist"
+msgstr "De map van de stem bestaat niet"
+
+msgid "Deletion failed"
+msgstr "Verwijderen mislukt"

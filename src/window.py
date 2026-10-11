@@ -107,6 +107,7 @@ class ParoluWindow(Adw.ApplicationWindow):
             "Español": "es",
             "Francais": "fr",
             "Português Brasileiro": "pt_BR",
+            "Nederlands": "nl",
         }
         self.voicemanager = VoiceManager(self)
 

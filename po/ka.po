@@ -1,0 +1,161 @@
+# Georgian translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Georgian\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "ტექსტური ფაილის გახსნა"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "ტექსტის ფაილში შენახვა"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "მენიუ"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "ენის არჩევა"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "ხმის არჩევა"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "ხმის სიმაღლის შეცვლა"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "სიჩქარის შეცვლა"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "აუდიოს ფაილში შენახვა"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "ტექსტის ხმამაღლა წაკითხვა"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_კლავიატურის მალსახმობები"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "Parolu-ს _შესახებ"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "ტექსტის ხმამაღლა წაკითხვა"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Parolu საშუალებას გაძლევთ, ტექსტი სხვადასხვა ხმით აუდიოდ გარდაქმნათ. ეს "
+"მთლიანად თქვენს მოწყობილობაზე, ინტერნეტის გარეშე ხდება და თქვენი ტექსტი "
+"არასდროს ეგზავნება მესამე მხარეებს."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"პროგრამა ეფუძნება მეტყველების სინთეზის ბიბლიოთეკას Piper და მხარს უჭერს "
+"ხმებს სხვადასხვა ენაზე, მათ შორის გერმანულზე, იტალიურზე, ფრანგულზე, "
+"ესპანურზე და ესპერანტოზეც კი!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "პირველი გამოშვება"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "იტვირთება"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "ხმების ჩამოტვირთვა…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "ხმების წაშლა…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "ხმების ჩამოტვირთვა"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "ქსელთან კავშირი არ არის"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "ხელმისაწვდომი ხმების მიღება ვერ მოხერხდა"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "ყველა ხმა ჩამოტვირთულია"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "დამატებითი ხმები ხელმისაწვდომი არ არის"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "ხმების წაშლა"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "წაშლა"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "დაყენებული ხმები არ არის"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "ამ ენისთვის წასაშლელი ხმები არ არის"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "მიმდინარეობს დაყენება"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "დაყენება დასრულდა"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "დაყენებულია"

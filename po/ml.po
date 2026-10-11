@@ -1,0 +1,160 @@
+# Malayalam translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Malayalam\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "ടെക്സ്റ്റ് ഫയൽ തുറക്കുക"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "ടെക്സ്റ്റ് ഫയലിൽ സൂക്ഷിക്കുക"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "മെനു"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "ഭാഷ തിരഞ്ഞെടുക്കുക"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "ശബ്ദം തിരഞ്ഞെടുക്കുക"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "ശബ്ദത്തിന്റെ പിച്ച് ക്രമീകരിക്കുക"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "വേഗത ക്രമീകരിക്കുക"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "ഓഡിയോ ഫയലിൽ സൂക്ഷിക്കുക"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "ടെക്സ്റ്റ് വായിച്ചുകേൾപ്പിക്കുക"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_കീബോർഡ് കുറുക്കുവഴികൾ"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "Parolu-നെ _കുറിച്ച്"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "ടെക്സ്റ്റ് വായിച്ചുകേൾപ്പിക്കുക"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"വ്യത്യസ്ത ശബ്ദങ്ങൾ ഉപയോഗിച്ച് ടെക്സ്റ്റിൽ നിന്ന് ഓഡിയോ സൃഷ്ടിക്കാൻ Parolu നിങ്ങളെ സഹായിക്കുന്നു. "
+"ഇത് പൂർണ്ണമായും നിങ്ങളുടെ ഉപകരണത്തിൽ ഓഫ്‌ലൈനായി നടക്കുന്നു. നിങ്ങളുടെ ടെക്സ്റ്റ് ഒരിക്കലും മൂന്നാം "
+"കക്ഷികൾക്ക് അയയ്ക്കില്ല."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"Piper സംഭാഷണ സിന്തസിസ് ലൈബ്രറിയെ അടിസ്ഥാനമാക്കിയുള്ള ഈ ആപ്ലിക്കേഷൻ ജർമ്മൻ, ഇറ്റാലിയൻ, "
+"ഫ്രഞ്ച്, സ്പാനിഷ്, എസ്പെരാന്റോ എന്നിവയുൾപ്പെടെ വിവിധ ഭാഷകളിലെ ശബ്ദങ്ങളെ പിന്തുണയ്ക്കുന്നു!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "ആദ്യ പതിപ്പ്"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "ലോഡ് ചെയ്യുന്നു"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "ശബ്ദങ്ങൾ ഡൗൺലോഡ് ചെയ്യുക…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "ശബ്ദങ്ങൾ ഇല്ലാതാക്കുക…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "ശബ്ദങ്ങൾ ഡൗൺലോഡ് ചെയ്യുക"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "നെറ്റ്‌വർക്ക് കണക്ഷനില്ല"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "ലഭ്യമായ ശബ്ദങ്ങൾ ലഭ്യമാക്കാനായില്ല"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "എല്ലാ ശബ്ദങ്ങളും ഡൗൺലോഡ് ചെയ്തു"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "കൂടുതൽ ശബ്ദങ്ങൾ ലഭ്യമല്ല"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "ശബ്ദങ്ങൾ നീക്കം ചെയ്യുക"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "ഇല്ലാതാക്കുക"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "ഇൻസ്റ്റാൾ ചെയ്ത ശബ്ദങ്ങളില്ല"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "ഈ ഭാഷയ്ക്കായി നീക്കം ചെയ്യാൻ ശബ്ദങ്ങളില്ല"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "ഇൻസ്റ്റാൾ ചെയ്യുന്നു"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "ഇൻസ്റ്റാളേഷൻ പൂർത്തിയായി"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "ഇൻസ്റ്റാൾ ചെയ്തു"

@@ -1,0 +1,161 @@
+# Czech translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Otevřít textový soubor"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Uložit text do souboru"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Nabídka"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Vybrat jazyk"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "Vybrat hlas"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "Upravit výšku hlasu"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "Upravit rychlost"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "Uložit zvuk do souboru"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "Přečíst text"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_Klávesové zkratky"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_O aplikaci Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Přečíst text"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Parolu umožňuje převádět text na zvuk pomocí různých hlasů. Vše probíhá "
+"výhradně offline ve vašem zařízení a text se nikdy neposílá třetím stranám."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"Aplikace je založena na knihovně pro syntézu řeči Piper a podporuje hlasy v "
+"různých jazycích včetně němčiny, italštiny, francouzštiny, španělštiny a "
+"dokonce esperanta!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "První vydání"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "Načítání"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "Stáhnout hlasy…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "Odstranit hlasy…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "Stáhnout hlasy"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "Bez připojení k síti"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "Nepodařilo se načíst dostupné hlasy"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "Všechny hlasy jsou staženy"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "Žádné další hlasy nejsou k dispozici"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "Odstranit hlasy"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "Odstranit"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "Žádné nainstalované hlasy"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "Pro tento jazyk nejsou žádné hlasy k odstranění"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "Instalace"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "Instalace dokončena"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "Nainstalováno"

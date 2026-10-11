@@ -1,0 +1,162 @@
+# Vietnamese translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Mở tệp văn bản"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Lưu văn bản vào tệp"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Trình đơn"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Chọn ngôn ngữ"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "Chọn giọng đọc"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "Điều chỉnh cao độ"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "Điều chỉnh tốc độ"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "Lưu âm thanh vào tệp"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "Đọc văn bản thành tiếng"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_Phím tắt"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_Giới thiệu về Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Đọc văn bản thành tiếng"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Parolu cho phép bạn tạo âm thanh từ văn bản bằng nhiều giọng đọc khác nhau. "
+"Mọi thao tác đều diễn ra hoàn toàn ngoại tuyến trên thiết bị của bạn và văn "
+"bản không bao giờ được gửi cho bên thứ ba."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"Ứng dụng được xây dựng dựa trên thư viện tổng hợp giọng nói Piper và hỗ trợ "
+"giọng đọc cho nhiều ngôn ngữ, bao gồm tiếng Đức, Ý, Pháp, Tây Ban Nha và cả "
+"Esperanto!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "Bản phát hành đầu tiên"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "Đang tải"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "Tải xuống giọng đọc…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "Xóa giọng đọc…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "Tải xuống giọng đọc"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "Không có kết nối mạng"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "Không thể lấy các giọng đọc có sẵn"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "Đã tải xuống tất cả giọng đọc"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "Không còn giọng đọc nào khác"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "Gỡ bỏ giọng đọc"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "Xóa"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "Chưa cài đặt giọng đọc"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "Không có giọng đọc nào để gỡ bỏ cho ngôn ngữ này"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "Đang cài đặt"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "Đã hoàn tất cài đặt"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "Đã cài đặt"

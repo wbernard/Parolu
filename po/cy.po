@@ -1,0 +1,161 @@
+# Welsh translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Welsh\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Agor ffeil destun"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Cadw testun i ffeil"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Dewislen"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Dewis iaith"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "Dewis llais"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "Addasu traw"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "Addasu cyflymder"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "Cadw sain i ffeil"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "Darllen testun"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_Llwybrau byr bysellfwrdd"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_Ynghylch Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Darllen testun"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Mae Parolu yn eich galluogi i gynhyrchu sain o destun gan ddefnyddio "
+"lleisiau gwahanol. Mae hyn yn digwydd yn gyfan gwbl all-lein ar eich dyfais, "
+"ac ni anfonir eich testun at drydydd partïon byth."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"Mae wedi’i adeiladu ar lyfrgell synthesis lleferydd Piper ac yn cefnogi "
+"lleisiau ar gyfer ieithoedd gwahanol, gan gynnwys Almaeneg, Eidaleg, "
+"Ffrangeg, Sbaeneg a hyd yn oed Esperanto!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "Rhyddhad cyntaf"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "Wrthi’n llwytho"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "Lawrlwytho lleisiau…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "Dileu lleisiau…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "Lawrlwytho lleisiau"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "Dim cysylltiad rhwydwaith"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "Methu nôl y lleisiau sydd ar gael"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "Pob llais wedi’i lawrlwytho"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "Dim lleisiau ychwanegol ar gael"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "Tynnu lleisiau"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "Dileu"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "Dim lleisiau wedi’u gosod"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "Nid oes lleisiau i’w tynnu ar gyfer yr iaith hon"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "Wrthi’n gosod"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "Gosod wedi’i gwblhau"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "Wedi’i osod"

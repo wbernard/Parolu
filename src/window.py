@@ -107,6 +107,7 @@ class ParoluWindow(Adw.ApplicationWindow):
             "Deutsch": "de",
             "Italiano": "it",
             "Español": "es",
+            "Español (México)": "es_MX",
             "Français": "fr",
             "Português Brasileiro": "pt_BR",
             "Nederlands": "nl",
@@ -431,6 +432,9 @@ class ParoluWindow(Adw.ApplicationWindow):
             return False
         if markdown_locale == lang_code:
             return True
+        # Regionen mit eigenem Eintrag (z.B. es_MX) nicht zusätzlich unter der Grundsprache anzeigen
+        if markdown_locale in self.lang_map.values():
+            return False
         return markdown_locale.split('_')[0] == lang_code
 
     def _parse_voices_md(self, md_text, lang_code):

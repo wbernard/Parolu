@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: parolu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"POT-Creation-Date: 2026-09-10 20:31-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,40 +33,40 @@ msgstr ""
 msgid "Choose Language"
 msgstr ""
 
-#: src/window.ui:79
+#: src/window.ui:80
 msgid "Choose Voice"
 msgstr ""
 
-#: src/window.ui:99
+#: src/window.ui:100
 msgid "Adjust Pitch"
 msgstr ""
 
-#: src/window.ui:166
+#: src/window.ui:167
 msgid "Adjust Speed"
 msgstr ""
 
-#: src/window.ui:245
+#: src/window.ui:246
 msgid "Save Audio to File"
 msgstr ""
 
-#: src/window.ui:254
+#: src/window.ui:255
 msgid "Read Text"
 msgstr ""
 
-#: src/window.ui:293
+#: src/window.ui:294
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/window.ui:297
+#: src/window.ui:298
 msgid "_About Parolu"
 msgstr ""
 
-#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.desktop.in:3
 #: data/im.bernard.Parolu.metainfo.xml.in:10
 msgid "Parolu"
 msgstr ""
 
-#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.desktop.in:4
 #: data/im.bernard.Parolu.metainfo.xml.in:11
 #: data/im.bernard.Parolu.metainfo.xml.in:51
 msgid "Read text out loud"
@@ -91,68 +91,76 @@ msgid ""
 msgstr ""
 
 #: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Minor release with build system fixes"
+msgstr ""
+
+#: data/im.bernard.Parolu.metainfo.xml.in:63
+msgid "Minor release with mostly internal improvements to the code"
+msgstr ""
+
+#: data/im.bernard.Parolu.metainfo.xml.in:68
 msgid "Initial release"
 msgstr ""
 
-#: src/window.py:142
+#: src/window.py:137
 msgid "Loading"
 msgstr ""
 
 #. print ('Namen der Stimme voice[name]  = ', voice['name'])
 #. für Esperanto gibt es aktuell keine Stimmen
-#: src/window.py:225
+#: src/window.py:220
 msgid "Download Voices…"
 msgstr ""
 
-#: src/window.py:226
+#: src/window.py:221
 msgid "Delete Voices…"
 msgstr ""
 
-#: src/window.py:242
+#: src/window.py:237
 msgid "Download Voices"
 msgstr ""
 
-#: src/window.py:259
+#: src/window.py:254
 msgid "No Network Connection"
 msgstr ""
 
-#: src/window.py:260
+#: src/window.py:255
 msgid "Could not fetch available voices"
 msgstr ""
 
-#: src/window.py:302
+#: src/window.py:297
 msgid "All Voices Downloaded"
 msgstr ""
 
-#: src/window.py:303
+#: src/window.py:298
 msgid "No additional voices available"
 msgstr ""
 
-#: src/window.py:324
+#: src/window.py:319
 msgid "Remove Voices"
 msgstr ""
 
 #. Löschen-Button
-#: src/window.py:346
+#: src/window.py:341
 msgid "Delete"
 msgstr ""
 
-#: src/window.py:363
+#: src/window.py:358
 msgid "No Installed Voices"
 msgstr ""
 
-#: src/window.py:364
+#: src/window.py:359
 msgid "There are no voices to remove for this language"
 msgstr ""
 
-#: src/window.py:457
+#: src/window.py:452
 msgid "Installing"
 msgstr ""
 
-#: src/window.py:479
+#: src/window.py:474
 msgid "Installation complete"
 msgstr ""
 
-#: src/window.py:482
+#: src/window.py:477
 msgid "Installed"
 msgstr ""

@@ -106,6 +106,7 @@ class ParoluWindow(Adw.ApplicationWindow):
             "Italiano": "it",
             "Español": "es",
             "Francais": "fr",
+            "Português Brasileiro": "pt_BR",
             "Nederlands": "nl",
         }
         self.voicemanager = VoiceManager(self)
@@ -268,7 +269,7 @@ class ParoluWindow(Adw.ApplicationWindow):
         self.download_progress = {}
 
         for voice in available_voices:
-            if voice['id'] not in installed_ids:
+            if voice['id'] not in installed_ids and 'model_url' in voice and 'config_url' in voice:
                 row = Adw.ActionRow(title=voice['name'])
 
                 # Fortschrittsbalken
@@ -387,6 +388,14 @@ class ParoluWindow(Adw.ApplicationWindow):
 
             return []
 
+    def _locale_matches(self, markdown_locale, lang_code):
+        """Matches Piper locale codes (e.g. pt_BR) against app lang codes (e.g. de, pt_BR)."""
+        if markdown_locale is None:
+            return False
+        if markdown_locale == lang_code:
+            return True
+        return markdown_locale.split('_')[0] == lang_code
+
     def _parse_voices_md(self, md_text, lang_code):
         """Parst das aktuelle Piper-Voices Markdown-Format"""
         voices = []
@@ -401,11 +410,11 @@ class ParoluWindow(Adw.ApplicationWindow):
                 lang_parts = line.split('`')
                 # print ('Teile der Stimme  ', lang_parts)
                 if len(lang_parts) > 1:
-                    current_lang = lang_parts[1].split('_')[0]  # Extrahiert "it" aus "it_IT"
+                    current_lang = lang_parts[1]
                     current_voice = None
 
             # Nur Stimmen der gewählten Sprache verarbeiten
-            if current_lang != lang_code:  # wenn andere Sprache wird Rest übersprungen
+            if not self._locale_matches(current_lang, lang_code):
                 continue
 
             # Stimmenname erkennen (z.B. "* paola")
@@ -440,7 +449,7 @@ class ParoluWindow(Adw.ApplicationWindow):
                     })
         # print ('##### voices aus parse', voices)
 
-        return voices or [{'id': f"{lang_code}_default", 'name': "Default Voice"}]
+        return voices
 
     def _on_voice_selected(self, btn, voice_id, model_url, config_url, dialog):
         """Installiert die ausgewählte Stimme mit Fortschrittsanzeige"""

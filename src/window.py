@@ -432,14 +432,15 @@ class ParoluWindow(Adw.ApplicationWindow):
         current_lang = None
         current_voice = None
         # print ('Stimmen zum Download  ', md_text)
-        for line in md_text.split('\n'):
-            line = line.strip()
+        for raw_line in md_text.split('\n'):
+            line = raw_line.strip()
 
-            # Sprachkategorien mit und ohne Backticks erkennen (z.B. English (en_GB)).
-            lang_header = re.match(r'\* [^(]+\(`?([a-z]{2,3}_[A-Z]{2})`?[,)]', line)
-            if lang_header:
-                lang_region = lang_header.group(1)
-                current_lang = lang_region.split('_')[0] if lang_region != 'es_MX' else None
+            # Sprachkategorien stehen nicht eingerückt, mit und ohne Backticks
+            # (z.B. "* Italian (`it_IT`, Italiano)" oder "* English (en_GB)").
+            # Unlesbare Kategorien werden übersprungen statt der vorherigen Sprache zugeordnet.
+            if raw_line.startswith('* '):
+                lang_header = re.match(r'\* [^(]+\(`?([^`,)\s]+)`?[,)]', line)
+                current_lang = lang_header.group(1) if lang_header else None
                 current_voice = None
                 continue
 
@@ -465,11 +466,10 @@ class ParoluWindow(Adw.ApplicationWindow):
                         if start != -1 and end != -1 and start < end:
                             url = part[start + 1:end]
                             urls.append(url)
-                if urls[1].endswith(".json"): # wenn in der confi-Datei nach True .json steht
-                    urls[1] = urls[1][:-5]
-
                 # print ('---------- urls der Stimme in parse', urls)
-                if urls and len(urls) >= 2:
+                if len(urls) >= 2:
+                    if urls[1].endswith(".json"): # wenn in der confi-Datei nach True .json steht
+                        urls[1] = urls[1][:-5]
                     voices.append({
                         'id': f"{lang_code}-{current_voice}-{quality}",
                         'name': f"{current_voice.capitalize()}",

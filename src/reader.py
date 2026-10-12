@@ -125,6 +125,8 @@ class Reader():
                 print("❌ Modell oder Konfiguration fehlen")
                 return
 
+            self.voicemanager.repair_config(config_path)
+
             # We could also enable cude: with `use_cuda=True`
             self.p = PiperVoice.load(model_path, config_path)
 

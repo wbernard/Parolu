@@ -51,6 +51,21 @@ class VoiceManager:
             return f"{parts[1].capitalize()}" # hier wird "Kerstin" zurückgegeben
         return voice_id
 
+    def repair_config(self, config_path):
+        """Korrigiert fehlerhafte Piper-Konfigurationen vor dem Laden.
+
+        Manche Stimmen (z.B. es_MX-ald-medium) haben "PhonemeType.ESPEAK"
+        statt "espeak" als phoneme_type, was piper beim Laden ablehnt.
+        """
+        with open(config_path, encoding='utf-8') as f:
+            config = json.load(f)
+
+        phoneme_type = config.get('phoneme_type')
+        if isinstance(phoneme_type, str) and phoneme_type.startswith('PhonemeType.'):
+            config['phoneme_type'] = phoneme_type.split('.', 1)[1].lower()
+            with open(config_path, 'w', encoding='utf-8') as f:
+                json.dump(config, f, ensure_ascii=False, indent=2)
+
     def download_voice(self, voice_id, model_url, config_url, progress_callback=None):
         """Lädt eine Stimme herunter und speichert sie lokal über download_file"""
 

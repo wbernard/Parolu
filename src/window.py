@@ -23,6 +23,7 @@ from gi.repository import Gtk, Gio, GLib, Gdk
 
 import os
 import re
+import unicodedata
 import shutil
 import requests
 import json
@@ -106,7 +107,7 @@ class ParoluWindow(Adw.ApplicationWindow):
             "Deutsch": "de",
             "Italiano": "it",
             "Español": "es",
-            "Francais": "fr",
+            "Français": "fr",
             "Português Brasileiro": "pt_BR",
             "Nederlands": "nl",
             "English": "en",
@@ -139,14 +140,15 @@ class ParoluWindow(Adw.ApplicationWindow):
             "Tiếng Việt": "vi",
             "简体中文": "zh",
         }
+        # Einzige Quelle für die Sprachauswahl: alphabetisch, Akzente ignoriert (Č wie C)
+        self.lang_names = sorted(self.lang_map, key=lambda name: ''.join(
+            c for c in unicodedata.normalize('NFD', name.casefold())
+            if not unicodedata.combining(c)))
         self.voicemanager = VoiceManager(self)
 
         # Initiale UI-Aktualisierung
         self._connect_signals()
         self._setup_lang_chooser()
-
-        lang_name = self.lang_chooser.get_selected_item().get_string()
-        self.lang_code = self.lang_map.get(lang_name, "en")
         # print ('Sprachkodex am Beginn  ', self.lang_code)
 
         # HACK: This should be in the UI file, but for some reason style classes are not applied
@@ -209,18 +211,23 @@ class ParoluWindow(Adw.ApplicationWindow):
         # Signal vorübergehend deaktivieren
         self.lang_chooser.disconnect_by_func(self._on_lang_changed)
 
+        # Sprachliste aus lang_map aufbauen, Esperanto bleibt Standard
+        self.lang_chooser.set_model(Gtk.StringList.new(self.lang_names))
+        self.lang_chooser.set_selected(self.lang_names.index("Esperanto"))
+
         # Aktuelle Sprache auswählen
-        lang_name = self.lang_chooser.get_selected_item().get_string()
-        self.lang_code = self.lang_map.get(lang_name, "en")
+        self.lang_code = self._selected_lang_code()
         self._update_voice_chooser(self.lang_code)
         # print ('gewählte Sprache   ', lang_name)
         # Signal wieder verbinden
         self.lang_chooser.connect("notify::selected", self._on_lang_changed)
 
+    def _selected_lang_code(self):
+        return self.lang_map[self.lang_names[self.lang_chooser.get_selected()]]
+
     def _on_lang_changed(self, dropdown, _):
-        lang_name = self.lang_chooser.get_selected_item().get_string()
-        # print ('neue Sprache angeklickt', lang_name)
-        self.lang_code = self.lang_map.get(lang_name, "en")
+        # print ('neue Sprache angeklickt', self.lang_code)
+        self.lang_code = self._selected_lang_code()
         self._update_voice_chooser(self.lang_code)
 
     def _on_voice_changed(self, dropdown, _):

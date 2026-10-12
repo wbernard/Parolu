@@ -1,0 +1,172 @@
+# Brazilian Portuguese translations for parolu package.
+# Copyright (C) 2026 THE parolu'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the parolu package.
+# Polyana <polyana@example.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-10 20:31-0300\n"
+"PO-Revision-Date: 2026-09-10 20:35-0300\n"
+"Last-Translator: Polyana\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Abrir arquivo de texto"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Salvar texto em arquivo"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Menu"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Escolher idioma"
+
+#: src/window.ui:80
+msgid "Choose Voice"
+msgstr "Escolher voz"
+
+#: src/window.ui:100
+msgid "Adjust Pitch"
+msgstr "Ajustar tom"
+
+#: src/window.ui:167
+msgid "Adjust Speed"
+msgstr "Ajustar velocidade"
+
+#: src/window.ui:246
+msgid "Save Audio to File"
+msgstr "Salvar áudio em arquivo"
+
+#: src/window.ui:255
+msgid "Read Text"
+msgstr "Ler texto"
+
+#: src/window.ui:294
+msgid "_Keyboard Shortcuts"
+msgstr "_Atalhos de teclado"
+
+#: src/window.ui:298
+msgid "_About Parolu"
+msgstr "_Sobre o Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:4
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Ler texto em voz alta"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"O Parolu permite gerar áudio a partir de texto usando diferentes vozes. Isso "
+"acontece exclusivamente offline no seu dispositivo; seu texto nunca é "
+"enviado a terceiros."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"É construído com a biblioteca de síntese de voz Piper e suporta vozes para "
+"diferentes idiomas, incluindo alemão, italiano, francês, espanhol e até "
+"esperanto!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Minor release with build system fixes"
+msgstr "Versão menor com correções no sistema de build"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:63
+msgid "Minor release with mostly internal improvements to the code"
+msgstr "Versão menor com melhorias internas no código"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:68
+msgid "Initial release"
+msgstr "Versão inicial"
+
+#: src/window.py:137
+msgid "Loading"
+msgstr "Carregando"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:220
+msgid "Download Voices…"
+msgstr "Baixar vozes…"
+
+#: src/window.py:221
+msgid "Delete Voices…"
+msgstr "Excluir vozes…"
+
+#: src/window.py:237
+msgid "Download Voices"
+msgstr "Baixar vozes"
+
+#: src/window.py:254
+msgid "No Network Connection"
+msgstr "Sem conexão de rede"
+
+#: src/window.py:255
+msgid "Could not fetch available voices"
+msgstr "Não foi possível obter as vozes disponíveis"
+
+#: src/window.py:297
+msgid "All Voices Downloaded"
+msgstr "Todas as vozes baixadas"
+
+#: src/window.py:298
+msgid "No additional voices available"
+msgstr "Nenhuma voz adicional disponível"
+
+#: src/window.py:319
+msgid "Remove Voices"
+msgstr "Remover vozes"
+
+#. Löschen-Button
+#: src/window.py:341
+msgid "Delete"
+msgstr "Excluir"
+
+#: src/window.py:358
+msgid "No Installed Voices"
+msgstr "Nenhuma voz instalada"
+
+#: src/window.py:359
+msgid "There are no voices to remove for this language"
+msgstr "Não há vozes para remover neste idioma"
+
+#: src/window.py:452
+msgid "Installing"
+msgstr "Instalando"
+
+#: src/window.py:474
+msgid "Installation complete"
+msgstr "Instalação concluída"
+
+#: src/window.py:477
+msgid "Installed"
+msgstr "Instalado"

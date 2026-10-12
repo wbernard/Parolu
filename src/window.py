@@ -107,6 +107,7 @@ class ParoluWindow(Adw.ApplicationWindow):
             "Italiano": "it",
             "Español": "es",
             "Francais": "fr",
+            "Português Brasileiro": "pt_BR",
             "Nederlands": "nl",
             "English": "en",
             "Català": "ca",
@@ -298,7 +299,7 @@ class ParoluWindow(Adw.ApplicationWindow):
         self.download_progress = {}
 
         for voice in available_voices:
-            if voice['id'] not in installed_ids:
+            if voice['id'] not in installed_ids and 'model_url' in voice and 'config_url' in voice:
                 row = Adw.ActionRow(title=voice['name'])
 
                 # Fortschrittsbalken
@@ -417,6 +418,14 @@ class ParoluWindow(Adw.ApplicationWindow):
 
             return []
 
+    def _locale_matches(self, markdown_locale, lang_code):
+        """Matches Piper locale codes (e.g. pt_BR) against app lang codes (e.g. de, pt_BR)."""
+        if markdown_locale is None:
+            return False
+        if markdown_locale == lang_code:
+            return True
+        return markdown_locale.split('_')[0] == lang_code
+
     def _parse_voices_md(self, md_text, lang_code):
         """Parst das aktuelle Piper-Voices Markdown-Format"""
         voices = []
@@ -435,7 +444,7 @@ class ParoluWindow(Adw.ApplicationWindow):
                 continue
 
             # Nur Stimmen der gewählten Sprache verarbeiten
-            if current_lang != lang_code:  # wenn andere Sprache wird Rest übersprungen
+            if not self._locale_matches(current_lang, lang_code):
                 continue
 
             # Stimmenname erkennen (z.B. "* paola")
@@ -470,7 +479,7 @@ class ParoluWindow(Adw.ApplicationWindow):
                     })
         # print ('##### voices aus parse', voices)
 
-        return voices or [{'id': f"{lang_code}_default", 'name': "Default Voice"}]
+        return voices
 
     def _on_voice_selected(self, btn, voice_id, model_url, config_url, dialog):
         """Installiert die ausgewählte Stimme mit Fortschrittsanzeige"""

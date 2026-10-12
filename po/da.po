@@ -1,0 +1,162 @@
+# Danish translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Danish\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Åbn tekstfil"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Gem tekst i fil"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Menu"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Vælg sprog"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "Vælg stemme"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "Juster tonehøjde"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "Juster hastighed"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "Gem lyd i fil"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "Læs tekst op"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_Tastaturgenveje"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_Om Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Læs tekst op"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Parolu lader dig omdanne tekst til lyd med forskellige stemmer. Det sker "
+"udelukkende offline på din enhed, og din tekst sendes aldrig til "
+"tredjeparter."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"Programmet er baseret på talesyntesebiblioteket Piper og understøtter "
+"stemmer til forskellige sprog, herunder tysk, italiensk, fransk, spansk og "
+"endda esperanto!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "Første udgivelse"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "Indlæser"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "Hent stemmer…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "Slet stemmer…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "Hent stemmer"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "Ingen netværksforbindelse"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "Kunne ikke hente tilgængelige stemmer"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "Alle stemmer er hentet"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "Ingen yderligere stemmer tilgængelige"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "Fjern stemmer"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "Slet"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "Ingen installerede stemmer"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "Der er ingen stemmer at fjerne for dette sprog"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "Installerer"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "Installationen er fuldført"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "Installeret"

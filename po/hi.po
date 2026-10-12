@@ -1,0 +1,159 @@
+# Hindi translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "पाठ फ़ाइल खोलें"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "पाठ को फ़ाइल में सहेजें"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "मेन्यू"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "भाषा चुनें"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "आवाज़ चुनें"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "आवाज़ की तारता समायोजित करें"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "गति समायोजित करें"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "ऑडियो को फ़ाइल में सहेजें"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "पाठ पढ़कर सुनाएँ"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_कुंजीपटल शॉर्टकट"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "Parolu के _बारे में"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "पाठ पढ़कर सुनाएँ"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Parolu आपको अलग-अलग आवाज़ों का उपयोग करके पाठ से ऑडियो बनाने देता है। यह पूरी तरह "
+"आपके डिवाइस पर ऑफ़लाइन होता है और आपका पाठ कभी भी किसी तीसरे पक्ष को नहीं भेजा जाता।"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"यह Piper वाक् संश्लेषण लाइब्रेरी पर आधारित है और जर्मन, इतालवी, फ़्रेंच, स्पेनिश और यहाँ तक "
+"कि एस्पेरांतो सहित विभिन्न भाषाओं की आवाज़ों का समर्थन करता है!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "प्रारंभिक संस्करण"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "लोड हो रहा है"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "आवाज़ें डाउनलोड करें…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "आवाज़ें हटाएँ…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "आवाज़ें डाउनलोड करें"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "नेटवर्क कनेक्शन नहीं है"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "उपलब्ध आवाज़ें प्राप्त नहीं की जा सकीं"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "सभी आवाज़ें डाउनलोड हो गई हैं"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "कोई अतिरिक्त आवाज़ उपलब्ध नहीं है"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "आवाज़ें हटाएँ"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "हटाएँ"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "कोई आवाज़ इंस्टॉल नहीं है"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "इस भाषा के लिए हटाने योग्य कोई आवाज़ नहीं है"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "इंस्टॉल हो रहा है"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "इंस्टॉलेशन पूरा हुआ"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "इंस्टॉल हो गया"

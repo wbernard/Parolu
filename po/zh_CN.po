@@ -1,0 +1,159 @@
+# Simplified Chinese translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Simplified Chinese\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "打开文本文件"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "将文本保存到文件"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "菜单"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "选择语言"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "选择语音"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "调整音调"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "调整语速"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "将音频保存到文件"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "朗读文本"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_键盘快捷键"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_关于 Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "朗读文本"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Parolu 可以使用不同的语音将文本转换为音频。所有操作都在您的设备上完全离线进"
+"行，您的文本绝不会发送给任何第三方。"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"本应用基于 Piper 语音合成库，支持多种语言的语音，包括德语、意大利语、法语、西"
+"班牙语，甚至世界语！"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "初始版本"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "正在加载"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "下载语音…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "删除语音…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "下载语音"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "无网络连接"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "无法获取可用语音"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "已下载所有语音"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "没有更多可用语音"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "移除语音"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "删除"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "未安装语音"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "此语言没有可移除的语音"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "正在安装"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "安装完成"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "已安装"

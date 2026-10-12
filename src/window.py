@@ -22,6 +22,7 @@ from gi.repository import Gtk, Gio, GLib, Gdk
 
 
 import os
+import re
 import shutil
 import requests
 import json
@@ -108,6 +109,35 @@ class ParoluWindow(Adw.ApplicationWindow):
             "Francais": "fr",
             "Português Brasileiro": "pt_BR",
             "Nederlands": "nl",
+            "English": "en",
+            "Català": "ca",
+            "Čeština": "cs",
+            "Cymraeg": "cy",
+            "Dansk": "da",
+            "Ελληνικά": "el",
+            "Suomi": "fi",
+            "हिन्दी": "hi",
+            "Magyar": "hu",
+            "Íslenska": "is",
+            "ქართული": "ka",
+            "Қазақша": "kk",
+            "Lëtzebuergesch": "lb",
+            "Latviešu": "lv",
+            "മലയാളം": "ml",
+            "नेपाली": "ne",
+            "Norsk": "no",
+            "Polski": "pl",
+            "Română": "ro",
+            "Русский": "ru",
+            "Slovenčina": "sk",
+            "Slovenščina": "sl",
+            "Српски": "sr",
+            "Svenska": "sv",
+            "Kiswahili": "sw",
+            "Türkçe": "tr",
+            "Українська": "uk",
+            "Tiếng Việt": "vi",
+            "简体中文": "zh",
         }
         self.voicemanager = VoiceManager(self)
 
@@ -405,13 +435,13 @@ class ParoluWindow(Adw.ApplicationWindow):
         for line in md_text.split('\n'):
             line = line.strip()
 
-            # Sprachkategorie erkennen (z.B. "* Italian (`it_IT`, Italiano)")
-            if line.startswith('* ') and '(`' in line:
-                lang_parts = line.split('`')
-                # print ('Teile der Stimme  ', lang_parts)
-                if len(lang_parts) > 1:
-                    current_lang = lang_parts[1]
-                    current_voice = None
+            # Sprachkategorien mit und ohne Backticks erkennen (z.B. English (en_GB)).
+            lang_header = re.match(r'\* [^(]+\(`?([a-z]{2,3}_[A-Z]{2})`?[,)]', line)
+            if lang_header:
+                lang_region = lang_header.group(1)
+                current_lang = lang_region.split('_')[0] if lang_region != 'es_MX' else None
+                current_voice = None
+                continue
 
             # Nur Stimmen der gewählten Sprache verarbeiten
             if not self._locale_matches(current_lang, lang_code):

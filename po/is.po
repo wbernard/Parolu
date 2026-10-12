@@ -1,0 +1,160 @@
+# Icelandic translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Icelandic\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Opna textaskrá"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Vista texta í skrá"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Valmynd"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Velja tungumál"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "Velja rödd"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "Stilla tónhæð"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "Stilla hraða"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "Vista hljóð í skrá"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "Lesa texta upphátt"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_Flýtilyklar"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_Um Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Lesa texta upphátt"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Parolu gerir þér kleift að búa til hljóð úr texta með mismunandi röddum. "
+"Þetta gerist eingöngu án nettengingar í tækinu þínu og textinn þinn er "
+"aldrei sendur til þriðja aðila."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"Forritið byggir á Piper-talgervilssafninu og styður raddir fyrir ýmis "
+"tungumál, þar á meðal þýsku, ítölsku, frönsku, spænsku og jafnvel esperanto!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "Fyrsta útgáfa"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "Hleð"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "Sækja raddir…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "Eyða röddum…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "Sækja raddir"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "Engin nettenging"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "Ekki tókst að sækja tiltækar raddir"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "Allar raddir hafa verið sóttar"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "Engar fleiri raddir tiltækar"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "Fjarlægja raddir"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "Eyða"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "Engar uppsettar raddir"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "Engar raddir eru til að fjarlægja fyrir þetta tungumál"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "Set upp"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "Uppsetningu lokið"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "Uppsett"

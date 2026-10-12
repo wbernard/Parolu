@@ -1,0 +1,161 @@
+# Luxembourgish translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Luxembourgish\n"
+"Language: lb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Textdatei opmaachen"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Text an eng Datei späicheren"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Menü"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Sprooch auswielen"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "Stëmm auswielen"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "Tounhéicht upassen"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "Geschwindegkeet upassen"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "Audio an eng Datei späicheren"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "Text virliesen"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_Tastaturkierzelen"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_Iwwer Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Text virliesen"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Mat Parolu kënnt Dir Text mat verschiddene Stëmmen an Audio ëmwandelen. Dat "
+"geschitt ganz offline op Ärem Apparat, an Ären Text gëtt ni un Drëtter "
+"geschéckt."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"D’Applikatioun baséiert op der Piper-Bibliothéik fir Sproochsynthes an "
+"ënnerstëtzt Stëmme fir verschidde Sproochen, dorënner Däitsch, Italienesch, "
+"Franséisch, Spuenesch a souguer Esperanto!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "Éischt Versioun"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "Gëtt gelueden"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "Stëmmen eroflueden…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "Stëmmen läschen…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "Stëmmen eroflueden"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "Keng Netzwierkverbindung"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "Déi verfügbar Stëmme konnten net ofgeruff ginn"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "All Stëmme sinn erofgelueden"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "Keng weider Stëmme verfügbar"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "Stëmmen ewechhuelen"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "Läschen"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "Keng installéiert Stëmmen"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "Fir dës Sprooch gëtt et keng Stëmmen, déi ewechgeholl kënne ginn"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "Gëtt installéiert"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "Installatioun ofgeschloss"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "Installéiert"

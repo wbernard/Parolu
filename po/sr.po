@@ -1,0 +1,163 @@
+# Serbian translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Serbian\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Отвори текстуалну датотеку"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Сачувај текст у датотеку"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Мени"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Изабери језик"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "Изабери глас"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "Подеси висину гласа"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "Подеси брзину"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "Сачувај звук у датотеку"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "Прочитај текст наглас"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_Пречице на тастатури"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_О програму Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Прочитај текст наглас"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Parolu вам омогућава да претворите текст у звук помоћу различитих гласова. "
+"Све се одвија искључиво ван мреже на вашем уређају, а текст се никада не "
+"шаље трећим странама."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"Програм је заснован на библиотеци за синтезу говора Piper и подржава гласове "
+"за различите језике, укључујући немачки, италијански, француски, шпански, па "
+"чак и есперанто!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "Прво издање"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "Учитавање"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "Преузми гласове…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "Обриши гласове…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "Преузми гласове"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "Нема мрежне везе"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "Није могуће добавити доступне гласове"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "Сви гласови су преузети"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "Нема додатних доступних гласова"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "Уклони гласове"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "Обриши"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "Нема инсталираних гласова"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "За овај језик нема гласова за уклањање"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "Инсталирање"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "Инсталација је завршена"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "Инсталирано"

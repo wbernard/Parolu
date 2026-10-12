@@ -1,0 +1,161 @@
+# Finnish translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Finnish\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Avaa tekstitiedosto"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Tallenna teksti tiedostoon"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Valikko"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Valitse kieli"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "Valitse ääni"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "Säädä äänenkorkeutta"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "Säädä nopeutta"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "Tallenna ääni tiedostoon"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "Lue teksti ääneen"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_Pikanäppäimet"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_Tietoja Parolusta"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Lue teksti ääneen"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"Parolulla voit muuntaa tekstiä puheeksi eri äänillä. Tämä tapahtuu kokonaan "
+"ilman verkkoyhteyttä omalla laitteellasi, eikä tekstiäsi koskaan lähetetä "
+"kolmansille osapuolille."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"Sovellus perustuu Piper-puhesynteesikirjastoon ja tukee ääniä eri kielillä, "
+"kuten saksaksi, italiaksi, ranskaksi, espanjaksi ja jopa esperantoksi!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "Ensimmäinen julkaisu"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "Ladataan"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "Lataa ääniä…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "Poista ääniä…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "Lataa ääniä"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "Ei verkkoyhteyttä"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "Saatavilla olevien äänten hakeminen epäonnistui"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "Kaikki äänet on ladattu"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "Muita ääniä ei ole saatavilla"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "Poista ääniä"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "Poista"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "Ei asennettuja ääniä"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "Tälle kielelle ei ole poistettavia ääniä"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "Asennetaan"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "Asennus valmis"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "Asennettu"

@@ -1,0 +1,161 @@
+# Catalan translations for Parolu.
+# This file is distributed under the same license as the parolu package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: parolu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-30 22:12+0100\n"
+"PO-Revision-Date: 2026-10-11 23:00+0200\n"
+"Last-Translator: Codex\n"
+"Language-Team: Catalan\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/window.ui:16
+msgid "Open Text File"
+msgstr "Obre un fitxer de text"
+
+#: src/window.ui:23
+msgid "Save Text to File"
+msgstr "Desa el text en un fitxer"
+
+#: src/window.ui:31
+msgid "Menu"
+msgstr "Menú"
+
+#: src/window.ui:59
+msgid "Choose Language"
+msgstr "Tria la llengua"
+
+#: src/window.ui:79
+msgid "Choose Voice"
+msgstr "Tria la veu"
+
+#: src/window.ui:99
+msgid "Adjust Pitch"
+msgstr "Ajusta el to"
+
+#: src/window.ui:166
+msgid "Adjust Speed"
+msgstr "Ajusta la velocitat"
+
+#: src/window.ui:245
+msgid "Save Audio to File"
+msgstr "Desa l’àudio en un fitxer"
+
+#: src/window.ui:254
+msgid "Read Text"
+msgstr "Llegeix el text"
+
+#: src/window.ui:293
+msgid "_Keyboard Shortcuts"
+msgstr "_Dreceres de teclat"
+
+#: src/window.ui:297
+msgid "_About Parolu"
+msgstr "_Quant al Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:2
+#: data/im.bernard.Parolu.metainfo.xml.in:10
+msgid "Parolu"
+msgstr "Parolu"
+
+#: data/im.bernard.Parolu.desktop.in:3
+#: data/im.bernard.Parolu.metainfo.xml.in:11
+#: data/im.bernard.Parolu.metainfo.xml.in:51
+msgid "Read text out loud"
+msgstr "Llegeix el text"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:7
+msgid "Walter Bernard"
+msgstr "Walter Bernard"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:14
+msgid ""
+"Parolu allows you to generate audio from text using different voices. This "
+"happens exclusively offline on your device, your text is never sent to any "
+"third parties."
+msgstr ""
+"El Parolu permet generar àudio a partir de text amb diferents veus. Tot el "
+"procés es fa sense connexió al dispositiu i el text no s’envia mai a tercers."
+
+#: data/im.bernard.Parolu.metainfo.xml.in:18
+msgid ""
+"It's built on the Piper synthesizer library and supports voices for "
+"different languages including German, Italian, French, Spanish, and even "
+"Esperanto!"
+msgstr ""
+"Es basa en la biblioteca de síntesi de veu Piper i admet veus en diferents "
+"llengües, com ara l’alemany, l’italià, el francès, l’espanyol i fins i tot "
+"l’esperanto!"
+
+#: data/im.bernard.Parolu.metainfo.xml.in:58
+msgid "Initial release"
+msgstr "Primera versió"
+
+#: src/window.py:142
+msgid "Loading"
+msgstr "S’està carregant"
+
+#. print ('Namen der Stimme voice[name]  = ', voice['name'])
+#. für Esperanto gibt es aktuell keine Stimmen
+#: src/window.py:225
+msgid "Download Voices…"
+msgstr "Baixa veus…"
+
+#: src/window.py:226
+msgid "Delete Voices…"
+msgstr "Suprimeix veus…"
+
+#: src/window.py:242
+msgid "Download Voices"
+msgstr "Baixa veus"
+
+#: src/window.py:259
+msgid "No Network Connection"
+msgstr "Sense connexió de xarxa"
+
+#: src/window.py:260
+msgid "Could not fetch available voices"
+msgstr "No s’han pogut obtenir les veus disponibles"
+
+#: src/window.py:302
+msgid "All Voices Downloaded"
+msgstr "S’han baixat totes les veus"
+
+#: src/window.py:303
+msgid "No additional voices available"
+msgstr "No hi ha més veus disponibles"
+
+#: src/window.py:324
+msgid "Remove Voices"
+msgstr "Suprimeix veus"
+
+#. Löschen-Button
+#: src/window.py:346
+msgid "Delete"
+msgstr "Suprimeix"
+
+#: src/window.py:363
+msgid "No Installed Voices"
+msgstr "No hi ha veus instal·lades"
+
+#: src/window.py:364
+msgid "There are no voices to remove for this language"
+msgstr "No hi ha veus per suprimir en aquesta llengua"
+
+#: src/window.py:457
+msgid "Installing"
+msgstr "S’està instal·lant"
+
+#: src/window.py:479
+msgid "Installation complete"
+msgstr "S’ha completat la instal·lació"
+
+#: src/window.py:482
+msgid "Installed"
+msgstr "Instal·lada"

@@ -107,19 +107,18 @@ class ParoluWindow(Adw.ApplicationWindow):
             "Deutsch": "de",
             "Italiano": "it",
             "Español": "es",
-            "Español (México)": "es_MX",
             "Français": "fr",
-            "Português Brasileiro": "pt_BR",
-            "Nederlands": "nl",
-            "English": "en",
             "Català": "ca",
             "Čeština": "cs",
             "Cymraeg": "cy",
             "Dansk": "da",
             "Ελληνικά": "el",
+            "English": "en",
+            "Español (México)": "es_MX",
             "Suomi": "fi",
             "हिन्दी": "hi",
             "Magyar": "hu",
+            "Nederlands": "nl",
             "Íslenska": "is",
             "ქართული": "ka",
             "Қазақша": "kk",
@@ -129,6 +128,7 @@ class ParoluWindow(Adw.ApplicationWindow):
             "नेपाली": "ne",
             "Norsk": "no",
             "Polski": "pl",
+            "Português Brasileiro": "pt_BR",
             "Română": "ro",
             "Русский": "ru",
             "Slovenčina": "sk",
@@ -141,10 +141,8 @@ class ParoluWindow(Adw.ApplicationWindow):
             "Tiếng Việt": "vi",
             "简体中文": "zh",
         }
-        # Einzige Quelle für die Sprachauswahl: alphabetisch, Akzente ignoriert (Č wie C)
-        self.lang_names = sorted(self.lang_map, key=lambda name: ''.join(
-            c for c in unicodedata.normalize('NFD', name.casefold())
-            if not unicodedata.combining(c)))
+
+        self.lang_names = list(self.lang_map)
         self.voicemanager = VoiceManager(self)
 
         # Initiale UI-Aktualisierung
